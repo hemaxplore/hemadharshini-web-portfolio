@@ -506,7 +506,6 @@ body {
     flex-wrap: wrap;
     gap: 10px;
 }
-
 .tech-tags span {
     padding: 6px 14px;
     font-size: 13px;
@@ -514,6 +513,33 @@ body {
     border-radius: 20px;
     color: #0f172a;
     font-weight: 500;
+}
+
+/* Project button */
+.project-actions {
+    margin-top: 18px;
+}
+
+.btn-demo {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.btn-demo:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(79, 70, 229, 0.35);
+}
+
+/* Optional highlight for flagship project */
+.featured {
+    box-shadow: 0 15px 35px rgba(124, 58, 237, 0.15);
 }
 
 /* GitHub Button */
@@ -659,3 +685,4 @@ footer {
         gap: 16px;
     }
 }
+
