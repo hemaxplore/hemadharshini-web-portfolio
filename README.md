@@ -64,7 +64,7 @@ These visuals are included to help understand application flow and design clarit
 ## 🌍 Live Portfolio
 
 🔗 **Portfolio Website:**  
-👉 *(Add your GitHub Pages link here)*
+👉(https://r-hemadharshini.netlify.app/)
 
 📄 **Resume:**  
 👉 *([Google Drive Resume Link](https://drive.google.com/uc?export=download&id=1TBPzPewWCKqWasmfY9hMuKWBds3Lekbt))*
@@ -75,7 +75,7 @@ These visuals are included to help understand application flow and design clarit
 
 📧 Email: **darshinihema2102@gmail.com**  
 💼 GitHub: https://github.com/hemaxplore  
-🔗 LinkedIn: *([Add your LinkedIn profile](https://www.linkedin.com/in/hemadharshini21/))*
+🔗 LinkedIn:(https://www.linkedin.com/in/hemadharshini21/))*
 
 ---
 
