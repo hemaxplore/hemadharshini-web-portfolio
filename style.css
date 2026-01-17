@@ -517,7 +517,9 @@ body {
 
 /* Project button */
 .project-actions {
-    margin-top: 18px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;   /* centers horizontally */
 }
 
 .btn-demo {
@@ -685,4 +687,5 @@ footer {
         gap: 16px;
     }
 }
+
 
