@@ -1,13 +1,16 @@
 # 🌐 Personal Portfolio – Hemadharshini Ravi
 
 Welcome to my personal portfolio repository.  
-This portfolio showcases my technical skills, academic background, and hands-on experience in **Web Development, Data Analytics, and Software Engineering**.
+This portfolio showcases my technical skills, academic background, and hands-on experience in **Software Developer, Data Analytics, and Software Engineering**.
 
 It is designed to give recruiters a quick, clear view of my capabilities through real-world implementations, clean UI design, and problem-solving approaches.
 
+<img width="100%" height="100%" 
+src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExb3BkMnJ2bnl4dDc1N3RsdnlrcDU4dm00N2d2c3NiYmJoaWluYmZwaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l1Oe5bzMJi5LVcbP0u/giphy.gif"/>
+
 ## 👩‍💻 About Me
 
-🎓 Master of Computer Applications (MCA) Student  
+🎓 **Master of Computer Applications (MCA) Student** 
 💻 Web Developer | Data Analytics Enthusiast  
 📊 Passionate about building data-driven and user-centric applications  
 
