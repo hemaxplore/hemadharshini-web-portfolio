@@ -10,6 +10,10 @@ body {
     color: #1e293b;
 }
 
+body{
+    padding-bottom:50px;
+}
+
 /* ================= HERO ================= */
 .hero {
     height: 100vh;
@@ -18,7 +22,6 @@ body {
     background: #ffffff;
 }
 
-/* ================= NAVBAR ================= */
 /* ================= NAVBAR ================= */
 .navbar {
     position: fixed;
@@ -652,29 +655,28 @@ body {
 }
 
 /* ================= FOOTER ================= */
+/* ================= FOOTER ================= */
 footer {
-    background-color: #0a1f44; /* Dark Blue */
+    background-color: #0a1f44;
     color: #ffffff;
     text-align: center;
-    padding: 20px 10px;
+    padding: 8px 10px;   /* reduced from 20px */
     font-family: Arial, sans-serif;
-    font-size: 14px;
-}
-
-footer .footer-note {
-    margin-top: 5px;
     font-size: 13px;
-    color: #c0c0c0; /* Slightly lighter for contrast */
-}
-
-footer p {
-    margin: 5px 0;
-}
-
-footer {
+    line-height: 1.4;
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+footer p {
+    margin: 2px 0;   /* reduced spacing */
+}
+
+footer .footer-note {
+    margin-top: 2px;
+    font-size: 12px;
+    color: #c0c0c0;
 }
 
 /* ================= RESPONSIVE ================= */
@@ -687,5 +689,6 @@ footer {
         gap: 16px;
     }
 }
+
 
 
