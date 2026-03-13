@@ -1,5 +1,17 @@
 console.log("Modern Portfolio Loaded");
 
+function showToast(){
+
+const toast = document.getElementById("toast");
+
+toast.classList.add("show");
+
+setTimeout(function(){
+    toast.classList.remove("show");
+},3000);
+
+}
+
 document.getElementById("contact-form").addEventListener("submit", function(e){
 
 e.preventDefault();
