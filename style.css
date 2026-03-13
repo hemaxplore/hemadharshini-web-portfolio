@@ -666,18 +666,26 @@ body{
     margin:auto;
     display:flex;
     flex-direction:column;
-    gap:20px;
+    gap:25px;
 }
 
 /* INPUT ROW */
 
 .input-row{
     display:flex;
-    gap:20px;
+    gap:25px;
 }
 
 .input-row input{
     flex:1;
+}
+
+/* responsive fix */
+
+@media (max-width:700px){
+    .input-row{
+        flex-direction:column;
+    }
 }
 
 /* INPUT STYLE */
@@ -685,15 +693,23 @@ body{
 .message-form input,
 .message-form textarea{
 
-    background:#0c1325;
+    background:#0b1220;
     border:2px solid #00ff9c;
     border-radius:12px;
 
-    padding:16px;
+    padding:18px;
     font-size:16px;
 
     color:white;
     width:100%;
+}
+
+.message-form input:focus,
+.message-form textarea:focus{
+
+    outline:none;
+    border-color:#00ffd0;
+    box-shadow:0 0 12px #00ffd066;
 }
 
 .message-form input::placeholder,
@@ -701,32 +717,25 @@ body{
     color:#a0a0a0;
 }
 
-.message-form input:focus,
-.message-form textarea:focus{
-    outline:none;
-    border-color:#00ffc8;
-    box-shadow:0 0 10px #00ffc850;
-}
-
 /* BUTTON */
 
 .send-btn{
 
-    background:#19b95a;
+    background:#1db954;
     border:none;
 
-    padding:16px;
+    padding:18px;
+    font-size:18px;
     border-radius:12px;
 
-    font-size:18px;
     color:white;
-
     cursor:pointer;
+
     transition:0.3s;
 }
 
 .send-btn:hover{
-    background:#149a4a;
+    background:#159946;
     transform:scale(1.03);
 }
 
@@ -764,6 +773,7 @@ footer .footer-note {
         gap: 16px;
     }
 }
+
 
 
 
