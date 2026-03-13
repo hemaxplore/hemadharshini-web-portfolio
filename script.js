@@ -1,28 +1,49 @@
 console.log("Modern Portfolio Loaded");
 
-function showToast(){
+document.getElementById("contact-form").addEventListener("submit", function(e){
 
-    const toast = document.getElementById("toast");
+e.preventDefault();
 
-    toast.classList.add("show");
+const btn = document.querySelector(".send-btn");
 
-    setTimeout(() => {
-        toast.classList.remove("show");
-    }, 3500);
+/* disable button while sending */
+btn.disabled = true;
+btn.innerText = "Sending...";
 
-}
+const params = {
+name: this.name.value,
+phone: this.phone.value,
+email: this.email.value,
+message: this.message.value
+};
 
-document.addEventListener("DOMContentLoaded", function () {
+emailjs.send(
+"service_pdwyzfw",
+"template_txioa7m",
+params
+)
 
-    const form = document.querySelector(".message-form");
+.then(function(){
 
-    form.addEventListener("submit", function () {
+showToast();   // toast notification
 
-        setTimeout(() => {
-            form.reset();
-        }, 100);
+document.getElementById("contact-form").reset();
 
-    });
+/* restore button */
+btn.disabled = false;
+btn.innerText = "✉ Send Message";
+
+})
+
+.catch(function(error){
+
+console.error("EmailJS Error:", error);
+
+btn.disabled = false;
+btn.innerText = "✉ Send Message";
+
+alert("Message failed. Please try again.");
 
 });
 
+});
