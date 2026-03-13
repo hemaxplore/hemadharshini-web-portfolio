@@ -12,3 +12,17 @@ function showToast(){
 
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+
+    const form = document.querySelector(".message-form");
+
+    form.addEventListener("submit", function () {
+
+        setTimeout(() => {
+            form.reset();
+        }, 100);
+
+    });
+
+});
+
