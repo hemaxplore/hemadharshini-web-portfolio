@@ -654,7 +654,61 @@ body{
     }
 }
 
-/* ================= FOOTER ================= */
+/* ================= SEND MESSAGE ================= */
+.message-section{
+    padding:80px 20px;
+    text-align:center;
+}
+
+.message-form{
+    max-width:800px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.message-form input,
+.message-form textarea{
+
+    width:100%;
+    padding:16px;
+    background:#0a0f1c;
+    border:2px solid #00ff9c;
+    border-radius:12px;
+    color:white;
+    font-size:16px;
+}
+
+.message-form input::placeholder,
+.message-form textarea::placeholder{
+    color:#a0a0a0;
+}
+
+.message-form input:focus,
+.message-form textarea:focus{
+    outline:none;
+    border-color:#00ffcc;
+    box-shadow:0 0 10px #00ffcc40;
+}
+
+.send-btn{
+
+    background:#1db954;
+    border:none;
+    padding:16px;
+    font-size:18px;
+    border-radius:12px;
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.send-btn:hover{
+    background:#17a74a;
+    transform:scale(1.03);
+}
+
 /* ================= FOOTER ================= */
 footer {
     background-color: #0a1f44;
@@ -689,6 +743,7 @@ footer .footer-note {
         gap: 16px;
     }
 }
+
 
 
 
