@@ -739,6 +739,33 @@ body{
     transform:scale(1.03);
 }
 
+/* MESSAGE CARD */
+
+.message-card{
+
+    max-width:950px;
+    margin:auto;
+    padding:40px;
+
+    background:linear-gradient(145deg,#0c1428,#0a0f1c);
+
+    border-radius:18px;
+
+    border:1px solid rgba(0,255,156,0.2);
+
+    box-shadow:
+    0 8px 30px rgba(0,0,0,0.6),
+    0 0 12px rgba(0,255,156,0.08);
+
+    transition:0.3s;
+}
+
+.message-card:hover{
+    box-shadow:
+    0 10px 40px rgba(0,0,0,0.7),
+    0 0 18px rgba(0,255,156,0.12);
+}
+
 /* ================= FOOTER ================= */
 footer {
     background-color: #0a1f44;
@@ -773,6 +800,7 @@ footer .footer-note {
         gap: 16px;
     }
 }
+
 
 
 
