@@ -393,39 +393,31 @@
 <!-- SEND MESSAGE -->
 <section id="message" class="message-section">
 
-    <h2 class="section-title">Send Me a Message</h2>
+<h2 class="section-title">Send Me a Message</h2>
 
-    <div class="message-container">
+<form action="https://formsubmit.co/darshinihema2102@gmail.com" method="POST" class="message-form">
 
-        <form action="https://formsubmit.co/darshinihema2102@gmail.com" method="POST">
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_subject" value="Portfolio Enquiry">
 
-            <!-- Prevent spam -->
-            <input type="hidden" name="_captcha" value="false">
+<div class="input-row">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="tel" name="phone" placeholder="Your Phone" required>
+</div>
 
-            <!-- Email subject -->
-            <input type="hidden" name="_subject" value="New Portfolio Enquiry">
+<div class="input-row">
+    <input type="email" name="email" placeholder="Your Email" required>
+</div>
 
-            <!-- Redirect after submit -->
-            <input type="hidden" name="_next" value="https://hemaxplore.github.io/portfolio/thankyou.html">
+<textarea name="message" placeholder="Your Message" rows="6" required></textarea>
 
-            <input type="text" name="name" placeholder="Your Name" required>
+<button type="submit" class="send-btn">
+✉ Send Message
+</button>
 
-            <input type="tel" name="phone" placeholder="Your Phone" required>
+</form>
 
-            <input type="email" name="email" placeholder="Your Email" required>
-
-            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-
-            <button type="submit" class="send-btn">
-                ✉ Send Message
-            </button>
-
-        </form>
-
-    </div>
-
-</section>    
-
+</section>
 
 <footer>
     <p>© 2025 Hemadharshini R. All rights Reserved..</p>
@@ -437,6 +429,7 @@
 <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
