@@ -238,7 +238,11 @@ else if(userText.includes("contact") || userText.includes("email")){
 reply="You can contact Hemadharshini via email at <b>darshinihema2102@gmail.com</b> or through the contact form in this portfolio.";
 }
 
-
+// PHONE NUMBER
+else if(userText.includes("phone") || userText.includes("number") || userText.includes("mobile")){
+reply="You can contact Hemadharshini through these number 7092389282.";
+}
+    
 // VOXIRA
 else if(userText.includes("voxira")){
 lastTopic="voxira";
