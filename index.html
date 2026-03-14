@@ -423,50 +423,7 @@
 
 </div>
 
-</section>
-
-
-<!-- ================= AI PORTFOLIO ASSISTANT ================= -->
-
-<div class="ai-bot-toggle" onclick="toggleAIBot()">
-<img src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png" alt="AI">
-</div>
-
-<div class="ai-bot-container" id="aiBot">
-
-<div class="ai-bot-header">
-
-<div class="ai-bot-title">
-<img src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png">
-<span>Hemadharshini AI</span>
-</div>
-
-<span class="ai-close" onclick="toggleAIBot()">✕</span>
-
-</div>
-
-<div class="ai-bot-messages" id="aiMessages">
-
-<div class="ai-msg bot">
-👋 Hi! I'm your AI assistant.<br>
-Ask me about my projects, skills, or experience.
-</div>
-
-</div>
-
-<div class="ai-bot-input">
-
-<input 
-type="text"
-id="aiInput"
-placeholder="Ask something..."
-onkeypress="if(event.key==='Enter'){sendAIMessage()}">
-
-<button onclick="sendAIMessage()">➤</button>
-
-</div>
-
-</div>    
+</section>  
     
 <footer>
     <p>© 2025 Hemadharshini R. All rights Reserved..</p>
@@ -487,6 +444,38 @@ publicKey: "l3MWMMIDej9ZxLYts"
 </script>
 
 <script src="script.js"></script>    
+
+<!-- AI PORTFOLIO ASSISTANT -->
+<div id="ai-bot">
+
+    <!-- Floating Button -->
+    <div id="ai-bot-button">
+        <img src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png">
+    </div>
+
+    <!-- Chat Window -->
+    <div id="ai-bot-chat">
+
+        <div class="ai-header">
+            <span>AI Portfolio Assistant</span>
+            <button id="ai-close">✖</button>
+        </div>
+
+        <div id="ai-messages">
+            <div class="ai-msg bot">
+                Hello 👋 I'm Hemadharshini's AI assistant.<br>
+                Ask about skills, projects, experience or resume.
+            </div>
+        </div>
+
+        <div class="ai-input">
+            <input id="ai-input" type="text" placeholder="Ask something...">
+            <button id="ai-send">➤</button>
+        </div>
+
+    </div>
+
+</div>
     
 </body>
 </html>
