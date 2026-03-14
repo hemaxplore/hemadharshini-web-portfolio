@@ -797,6 +797,185 @@ opacity:1;
 transform:translateY(0);
 }
 
+/* ================= AI CHATBOT ================= */
+
+.ai-bot-toggle{
+
+position:fixed;
+bottom:25px;
+right:25px;
+
+width:65px;
+height:65px;
+
+border-radius:50%;
+
+background:linear-gradient(135deg,#00ffcc,#1db954);
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+cursor:pointer;
+
+box-shadow:0 10px 30px rgba(0,255,170,0.4);
+
+z-index:9999;
+
+animation:botPulse 2.5s infinite;
+
+}
+
+.ai-bot-toggle img{
+width:34px;
+height:34px;
+}
+
+@keyframes botPulse{
+
+0%{box-shadow:0 0 0 0 rgba(0,255,170,0.6);}
+70%{box-shadow:0 0 0 15px rgba(0,255,170,0);}
+100%{box-shadow:0 0 0 0 rgba(0,255,170,0);}
+
+}
+
+/* BOT WINDOW */
+
+.ai-bot-container{
+
+position:fixed;
+bottom:100px;
+right:25px;
+
+width:360px;
+height:460px;
+
+background:rgba(12,18,35,0.95);
+
+backdrop-filter:blur(15px);
+
+border-radius:18px;
+
+display:none;
+flex-direction:column;
+
+box-shadow:0 20px 60px rgba(0,0,0,0.5);
+
+border:1px solid rgba(255,255,255,0.08);
+
+overflow:hidden;
+
+z-index:9999;
+
+}
+
+/* HEADER */
+
+.ai-bot-header{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:14px 18px;
+
+background:linear-gradient(135deg,#00ffc3,#1db954);
+
+color:#000;
+
+font-weight:600;
+
+}
+
+.ai-bot-title{
+display:flex;
+align-items:center;
+gap:8px;
+}
+
+.ai-bot-title img{
+width:22px;
+}
+
+.ai-close{
+cursor:pointer;
+font-size:18px;
+}
+
+/* MESSAGES */
+
+.ai-bot-messages{
+
+flex:1;
+
+padding:15px;
+
+overflow-y:auto;
+
+font-size:14px;
+
+color:white;
+
+}
+
+.ai-msg{
+margin-bottom:10px;
+max-width:80%;
+padding:10px 12px;
+border-radius:10px;
+line-height:1.4;
+}
+
+.ai-msg.user{
+background:#1db954;
+color:#000;
+margin-left:auto;
+}
+
+.ai-msg.bot{
+background:#111a2b;
+border:1px solid rgba(255,255,255,0.05);
+}
+
+/* INPUT */
+
+.ai-bot-input{
+
+display:flex;
+
+border-top:1px solid rgba(255,255,255,0.05);
+
+}
+
+.ai-bot-input input{
+
+flex:1;
+
+border:none;
+outline:none;
+
+background:#0b1220;
+
+padding:12px;
+
+color:white;
+
+}
+
+.ai-bot-input button{
+
+background:#1db954;
+
+border:none;
+
+width:60px;
+
+font-size:18px;
+
+cursor:pointer;
+
+}
+
 /* ================= FOOTER ================= */
 footer {
     background-color: #0a1f44;
