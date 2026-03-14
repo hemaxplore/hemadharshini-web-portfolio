@@ -64,9 +64,11 @@ alert("Message failed. Check console.");
 
 });
 
-// ================= AI PORTFOLIO ASSISTANT V2 =================
+// ================= AI PORTFOLIO ASSISTANT =================
 
 document.addEventListener("DOMContentLoaded", function(){
+
+let lastTopic = "";    
 
 const botButton = document.getElementById("ai-bot-button");
 const botChat = document.getElementById("ai-bot-chat");
@@ -120,7 +122,7 @@ if(typing) typing.remove();
 function welcomeMessage(){
 
 addMessage(
-"👋 Hello! I'm Hemadharshini's AI Assistant.<br><br>\
+"👋 Hello! I'm Hemadharshini's AI Portfolio Assistant.<br><br>\
 You can ask me about:<br>\
 • Skills<br>\
 • Projects<br>\
@@ -143,22 +145,21 @@ const options = document.createElement("div");
 options.classList.add("quick-options");
 
 options.innerHTML=`
-<button onclick="quickAsk('skills')">Skills</button>
-<button onclick="quickAsk('projects')">Projects</button>
-<button onclick="quickAsk('experience')">Experience</button>
-<button onclick="quickAsk('contact')">Contact</button>
+<button class="quick-btn">Skills</button>
+<button class="quick-btn">Projects</button>
+<button class="quick-btn">Experience</button>
+<button class="quick-btn">Contact</button>
 `;
 
 messages.appendChild(options);
 
-}
-
-
-// ================= QUICK ASK =================
-
-window.quickAsk = function(text){
-input.value=text;
+document.querySelectorAll(".quick-btn").forEach(btn=>{
+btn.addEventListener("click",function(){
+input.value=this.innerText;
 send.click();
+});
+});
+
 }
 
 
@@ -178,54 +179,107 @@ setTimeout(function(){
 
 removeTyping();
 
-let reply="Sorry, I didn't understand. Try asking about skills, projects, experience, resume, or contact.";
+let reply="I’m not sure about that. Try asking about skills, projects, experience, or contact details.";
 
 
 // SKILLS
 if(userText.includes("skill")){
-reply="Hemadharshini has strong skills in Python, Flask, Streamlit, SQL, JavaScript, and AI-based application development.";
+reply="Hemadharshini has skills in Python, Flask, Streamlit, SQL, JavaScript, and AI-based application development.";
 }
 
-// PROJECTS
+// PROJECT LIST
 else if(userText.includes("project")){
-reply="She has developed multiple projects including Voxira AI Assistant, AI ATS Resume Analyzer, Thought Web AI Platform, and a Student Assistant Chatbot.";
+lastTopic="projects";
+
+reply="Hemadharshini has developed several projects:<br><br>\
+• Voxira AI Assistant<br>\
+• AI ATS Resume Analyzer<br>\
+• Thought Web AI Platform<br>\
+• Student Assistant Chatbot<br>\
+• Animal Grazing Detection System<br>\
+• Employee Attendance Tracking System<br><br>\
+You can ask me about any of these projects.";
 }
 
 // EXPERIENCE
 else if(userText.includes("experience") || userText.includes("internship")){
-reply="Hemadharshini completed a Web Development Internship at E-Soft IT Solutions and a Generative AI Internship supported by MSME.";
-}
-
-// RESUME
-else if(userText.includes("resume") || userText.includes("cv")){
-reply="You can download Hemadharshini's resume directly from the About section of this portfolio.";
+reply="Hemadharshini completed a Web Development Internship at E-Soft IT Solutions and also worked on Generative AI applications during her training programs.";
 }
 
 // CONTACT
 else if(userText.includes("contact") || userText.includes("email")){
-reply="You can contact Hemadharshini via email at <b>darshinihema2102@gmail.com</b> or through the contact form available on this website.";
+reply="You can contact Hemadharshini via email at <b>darshinihema2102@gmail.com</b> or through the contact form in this portfolio.";
 }
 
-// PHONE
-else if(userText.includes("phone")){
-reply="Her contact number is <b>+91 7092389282</b>.";
+// VOXIRA
+else if(userText.includes("voxira")){
+lastTopic="voxira";
+
+reply="Voxira AI is an intelligent voice-based AI assistant built using Python and AI concepts. It processes user queries and generates responses using natural interaction techniques.";
 }
 
-// LOCATION
-else if(userText.includes("location")){
-reply="She is currently based in Tamil Nadu, India.";
+
+// ATS
+else if(userText.includes("ats")){
+lastTopic="ats";
+
+reply="The AI ATS Resume Analyzer evaluates resumes against job descriptions and calculates how well they match ATS systems used by recruiters.";
 }
 
-// ABOUT
-else if(userText.includes("who") || userText.includes("about")){
-reply="Hemadharshini is an MCA student specializing in AI applications, data analytics, and intelligent web systems.";
+
+// THOUGHT WEB
+else if(userText.includes("thought web")){
+lastTopic="thought";
+
+reply="Thought Web is an AI-powered prompt-based web application where users interact with AI to generate intelligent responses.";
 }
 
+
+// ANIMAL DETECTION
+else if(userText.includes("animal")){
+lastTopic="animal";
+
+reply="Animal Grazing Detection is a computer vision project designed to identify grazing animals in field environments using image recognition techniques.";
+}
+
+
+// EMPLOYEE ATTENDANCE
+else if(userText.includes("attendance")){
+lastTopic="attendance";
+
+reply="Employee Attendance Tracking System is a role-based web application for managing employee attendance and generating reports.";
+}
 addMessage(reply,"bot");
 
-},1200);
+},1000);
 
 }
+
+// FOLLOW UP QUESTIONS
+
+else if(userText.includes("more") || userText.includes("explain")){
+
+if(lastTopic==="voxira"){
+reply="Voxira AI integrates voice interaction with AI response generation. It demonstrates how conversational systems can assist users through voice commands.";
+}
+
+else if(lastTopic==="ats"){
+reply="The ATS Analyzer compares resume content with job descriptions, identifies missing keywords, and provides suggestions to improve recruiter compatibility.";
+}
+
+else if(lastTopic==="animal"){
+reply="The system uses image processing and object detection models to identify grazing animals and monitor livestock activity automatically.";
+}
+
+else if(lastTopic==="attendance"){
+reply="The system includes admin dashboards, attendance tracking, and database storage using MySQL for managing employee records.";
+}
+
+else{
+reply="Could you specify what you would like to know more about?";
+}
+
+}    
 
 input.addEventListener("keypress",function(e){
 if(e.key==="Enter") send.click();
