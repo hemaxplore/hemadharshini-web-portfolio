@@ -1,6 +1,6 @@
 console.log("Modern Portfolio Loaded");
 
-# ================== TOAST ======================= #
+// ================== TOAST ======================= 
     
 function showToast(){
 
@@ -14,7 +14,7 @@ setTimeout(function(){
 
 }
 
-# ================= EMAIL VALIDATION =========================== #
+// ================= EMAIL VALIDATION =========================== 
     
 document.getElementById("contact-form").addEventListener("submit", function(e){
 
@@ -64,15 +64,17 @@ alert("Message failed. Check console.");
 
 });
 
-/* ==========================
-AI PORTFOLIO CHATBOT
-========================== */
+// ================= AI PORTFOLIO CHATBOT =================
 
 document.addEventListener("DOMContentLoaded", function(){
 
 const botButton = document.getElementById("ai-bot-button");
 const botChat = document.getElementById("ai-bot-chat");
 const botClose = document.getElementById("ai-close");
+
+const input = document.getElementById("ai-input");
+const send = document.getElementById("ai-send");
+const messages = document.getElementById("ai-messages");
 
 botButton.addEventListener("click", function(){
     botChat.style.display = "flex";
@@ -81,12 +83,6 @@ botButton.addEventListener("click", function(){
 botClose.addEventListener("click", function(){
     botChat.style.display = "none";
 });
-
-});
-
-const input = document.getElementById("ai-input");
-const send = document.getElementById("ai-send");
-const messages = document.getElementById("ai-messages");
 
 function addMessage(text, sender){
 
@@ -99,10 +95,10 @@ messages.scrollTop = messages.scrollHeight;
 
 }
 
-send.onclick = () => {
+send.onclick = function(){
 
 const userText = input.value.trim();
-if(userText==="") return;
+if(userText === "") return;
 
 addMessage(userText,"user");
 input.value="";
@@ -125,7 +121,7 @@ else if(userText.toLowerCase().includes("resume")){
 reply="You can download the resume from the About section of the portfolio.";
 }
 
-setTimeout(()=>{
+setTimeout(function(){
 addMessage(reply,"bot");
 },600);
 
@@ -133,4 +129,6 @@ addMessage(reply,"bot");
 
 input.addEventListener("keypress",function(e){
 if(e.key==="Enter") send.click();
+});
+
 });
