@@ -225,7 +225,7 @@ reply="You can contact Hemadharshini via email at <b>darshinihema2102@gmail.com<
 else if(userText.includes("voxira")){
 lastTopic="voxira";
 
-reply="Voxira AI is a voice-enabled AI assistant developed using Python and AI concepts. It allows users to interact through voice commands and receive intelligent responses. The system demonstrates speech interaction, response generation, and conversational AI behavior.";
+reply="Voxira AI is a voice-enabled AI assistant designed to interact with users using natural voice commands. It demonstrates conversational AI behavior and intelligent response generation. Type 'explain more' to see the technologies used.";
 }
 
 
@@ -233,15 +233,15 @@ reply="Voxira AI is a voice-enabled AI assistant developed using Python and AI c
 else if(userText.includes("ats")){
 lastTopic="ats";
 
-reply="The AI ATS Resume Analyzer evaluates resumes against job descriptions using keyword analysis. It helps candidates understand how well their resume matches ATS recruitment systems and provides suggestions for improvement.";
+reply="AI ATS Resume Analyzer is a resume evaluation system that analyzes how well a resume matches job descriptions used by ATS recruitment software. It helps candidates improve their resume quality. Type 'explain more' to see the technologies used.";
 }
 
 
 // THOUGHT WEB
-else if(userText.includes("thought web")){
+else if(userText.includes("thought web") || userText.includes("thought")){
 lastTopic="thought";
 
-reply="Thought Web is a prompt-driven AI web application where users can enter prompts and receive AI-generated responses. The project demonstrates prompt engineering, backend processing, and interactive AI web interfaces.";
+reply="Thought Web is an AI-powered prompt-driven web application that generates intelligent responses based on user prompts. The project demonstrates how AI models can be integrated into web interfaces to create interactive AI tools. Type 'explain more' to see the technologies used.";
 }
 
 
@@ -249,7 +249,7 @@ reply="Thought Web is a prompt-driven AI web application where users can enter p
 else if(userText.includes("animal")){
 lastTopic="animal";
 
-reply="Animal Grazing Detection is a computer vision project designed to detect grazing animals in field environments using image analysis techniques. It can help farmers monitor livestock activity and automate observation tasks.";
+reply="Animal Grazing Detection is a computer vision system designed to detect grazing animals from images. It can help farmers monitor livestock activity automatically. Type 'explain more' to see the technologies used.";
 }
 
 
@@ -257,7 +257,7 @@ reply="Animal Grazing Detection is a computer vision project designed to detect 
 else if(userText.includes("attendance")){
 lastTopic="attendance";
 
-reply="Employee Attendance Tracking System is a role-based web application that manages employee attendance records. It includes authentication, attendance storage in a database, and reporting dashboards for administrators.";
+reply="Employee Attendance Tracking System is a role-based web application used to record and manage employee attendance. It allows administrators to track employee presence and generate reports. Type 'explain more' to see the technologies used.";
 }
 
 
@@ -271,19 +271,46 @@ else if(
 ){
     
 if(lastTopic==="voxira"){
-reply="Voxira AI integrates voice interaction with AI response generation to assist users through conversational commands.";
+reply="Tools used in Voxira AI:<br><br>\
+• Python<br>\
+• Speech Recognition<br>\
+• Natural Language Processing<br>\
+• AI response engine<br>\
+• Streamlit interface";
 }
 
 else if(lastTopic==="ats"){
-reply="The ATS analyzer compares resume keywords with job descriptions and suggests improvements for better recruiter visibility.";
+reply="Tools used in ATS Resume Analyzer:<br><br>\
+• Python<br>\
+• Streamlit<br>\
+• NLP keyword analysis<br>\
+• Resume PDF parsing<br>\
+• Job description similarity matching";
 }
 
+else if(lastTopic==="thought"){
+reply="Tools used in Thought Web:<br><br>\
+• Python backend<br>\
+• Prompt-driven AI logic<br>\
+• HTML, CSS, JavaScript interface<br>\
+• Modular AI response processing";
+}    
+
 else if(lastTopic==="animal"){
-reply="The system processes images and detects animals automatically to monitor livestock behavior.";
+reply="Tools used in Animal Grazing Detection:<br><br>\
+• Python<br>\
+• CNN model<br>\
+• OpenCV<br>\
+• Image classification<br>\
+• Deep learning training dataset";
 }
 
 else if(lastTopic==="attendance"){
-reply="It includes an admin dashboard, attendance reports, and MySQL database integration.";
+reply="Tools used in Employee Attendance System:<br><br>\
+• PHP backend<br>\
+• MySQL database<br>\
+• HTML CSS JavaScript<br>\
+• Admin dashboard system";
 }
 
 else{
