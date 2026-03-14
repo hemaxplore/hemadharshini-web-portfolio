@@ -81,8 +81,8 @@ const messages = document.getElementById("ai-messages");
 botButton.addEventListener("click", function(){
     botChat.style.display = "flex";
 
-    if(messages.children.length === 0){
-        welcomeMessage();
+    if(!messages.dataset.welcome){
+        messages.dataset.welcome="true";
     }
 });
 
@@ -150,17 +150,14 @@ showQuickOptions();
 
 function showQuickOptions(){
 
-const options = document.createElement("div");
-options.classList.add("quick-options");
+const quickArea = document.getElementById("quick-area");
 
-options.innerHTML=`
+quickArea.innerHTML = `
 <button class="quick-btn">Skills</button>
 <button class="quick-btn">Projects</button>
 <button class="quick-btn">Experience</button>
 <button class="quick-btn">Contact</button>
 `;
-
-messages.appendChild(options);
 
 document.querySelectorAll(".quick-btn").forEach(btn=>{
 btn.addEventListener("click",function(){
@@ -228,7 +225,7 @@ reply="You can contact Hemadharshini via email at <b>darshinihema2102@gmail.com<
 else if(userText.includes("voxira")){
 lastTopic="voxira";
 
-reply="Voxira AI is an intelligent voice-based AI assistant built using Python and AI concepts.";
+reply="Voxira AI is a voice-enabled AI assistant developed using Python and AI concepts. It allows users to interact through voice commands and receive intelligent responses. The system demonstrates speech interaction, response generation, and conversational AI behavior.";
 }
 
 
@@ -236,7 +233,7 @@ reply="Voxira AI is an intelligent voice-based AI assistant built using Python a
 else if(userText.includes("ats")){
 lastTopic="ats";
 
-reply="The AI ATS Resume Analyzer evaluates resumes against job descriptions and estimates ATS compatibility.";
+reply="The AI ATS Resume Analyzer evaluates resumes against job descriptions using keyword analysis. It helps candidates understand how well their resume matches ATS recruitment systems and provides suggestions for improvement.";
 }
 
 
@@ -244,7 +241,7 @@ reply="The AI ATS Resume Analyzer evaluates resumes against job descriptions and
 else if(userText.includes("thought web")){
 lastTopic="thought";
 
-reply="Thought Web is an AI-powered prompt-based web application for generating intelligent responses.";
+reply="Thought Web is a prompt-driven AI web application where users can enter prompts and receive AI-generated responses. The project demonstrates prompt engineering, backend processing, and interactive AI web interfaces.";
 }
 
 
@@ -252,7 +249,7 @@ reply="Thought Web is an AI-powered prompt-based web application for generating 
 else if(userText.includes("animal")){
 lastTopic="animal";
 
-reply="Animal Grazing Detection is a computer vision system that identifies grazing animals using image recognition.";
+reply="Animal Grazing Detection is a computer vision project designed to detect grazing animals in field environments using image analysis techniques. It can help farmers monitor livestock activity and automate observation tasks.";
 }
 
 
@@ -260,13 +257,19 @@ reply="Animal Grazing Detection is a computer vision system that identifies graz
 else if(userText.includes("attendance")){
 lastTopic="attendance";
 
-reply="Employee Attendance Tracking System is a role-based web application that records and manages employee attendance.";
+reply="Employee Attendance Tracking System is a role-based web application that manages employee attendance records. It includes authentication, attendance storage in a database, and reporting dashboards for administrators.";
 }
 
 
 // FOLLOW UP QUESTIONS
-else if(userText.includes("more") || userText.includes("explain")){
-
+else if(
+(userText.includes("more") || userText.includes("explain")) &&
+!userText.includes("voxira") &&
+!userText.includes("ats") &&
+!userText.includes("animal") &&
+!userText.includes("attendance")
+){
+    
 if(lastTopic==="voxira"){
 reply="Voxira AI integrates voice interaction with AI response generation to assist users through conversational commands.";
 }
