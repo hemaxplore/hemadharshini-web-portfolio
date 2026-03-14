@@ -164,7 +164,7 @@ quickArea.innerHTML = `
 
 document.querySelectorAll(".quick-btn").forEach(btn=>{
 btn.addEventListener("click",function(){
-input.value=this.innerText;
+input.value=this.innerText.toLowerCase();
 send.click();
 });
 });
@@ -192,7 +192,7 @@ let reply="I’m not sure about that. Try asking about skills, projects, experie
 
 
 // GREETINGS
-if(userText.includes("hi") || userText.includes("hello") || userText.includes("hey") || user.Text.includes("hai")){
+if(userText.includes("hi") || userText.includes("hello") || userText.includes("hey") || userText.includes("hai")){
 reply="Hello! 👋 What can I do for you.";
 }
 
@@ -207,7 +207,7 @@ reply="Nice to meet you too! 😊 Let me know if you'd like to explore Hemadhars
 }
     
 // SKILLS
-if(userText.includes("skill")){
+else if(userText.includes("skill")){
 reply="Hemadharshini has skills in Python, Flask, Streamlit, SQL, JavaScript, and AI-based application development.";
 }
 
