@@ -928,6 +928,7 @@ footer {
     font-size: 13px;
     line-height: 1.4;
     position: relative;
+    bottom: 0;
     width: 100%;
 }
 
