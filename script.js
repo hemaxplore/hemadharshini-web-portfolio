@@ -187,6 +187,7 @@ if(userText.includes("skill")){
 reply="Hemadharshini has skills in Python, Flask, Streamlit, SQL, JavaScript, and AI-based application development.";
 }
 
+
 // PROJECT LIST
 else if(userText.includes("project")){
 lastTopic="projects";
@@ -201,21 +202,24 @@ reply="Hemadharshini has developed several projects:<br><br>\
 You can ask me about any of these projects.";
 }
 
+
 // EXPERIENCE
 else if(userText.includes("experience") || userText.includes("internship")){
 reply="Hemadharshini completed a Web Development Internship at E-Soft IT Solutions and also worked on Generative AI applications during her training programs.";
 }
+
 
 // CONTACT
 else if(userText.includes("contact") || userText.includes("email")){
 reply="You can contact Hemadharshini via email at <b>darshinihema2102@gmail.com</b> or through the contact form in this portfolio.";
 }
 
+
 // VOXIRA
 else if(userText.includes("voxira")){
 lastTopic="voxira";
 
-reply="Voxira AI is an intelligent voice-based AI assistant built using Python and AI concepts. It processes user queries and generates responses using natural interaction techniques.";
+reply="Voxira AI is an intelligent voice-based AI assistant built using Python and AI concepts.";
 }
 
 
@@ -223,7 +227,7 @@ reply="Voxira AI is an intelligent voice-based AI assistant built using Python a
 else if(userText.includes("ats")){
 lastTopic="ats";
 
-reply="The AI ATS Resume Analyzer evaluates resumes against job descriptions and calculates how well they match ATS systems used by recruiters.";
+reply="The AI ATS Resume Analyzer evaluates resumes against job descriptions and estimates ATS compatibility.";
 }
 
 
@@ -231,7 +235,7 @@ reply="The AI ATS Resume Analyzer evaluates resumes against job descriptions and
 else if(userText.includes("thought web")){
 lastTopic="thought";
 
-reply="Thought Web is an AI-powered prompt-based web application where users interact with AI to generate intelligent responses.";
+reply="Thought Web is an AI-powered prompt-based web application for generating intelligent responses.";
 }
 
 
@@ -239,47 +243,48 @@ reply="Thought Web is an AI-powered prompt-based web application where users int
 else if(userText.includes("animal")){
 lastTopic="animal";
 
-reply="Animal Grazing Detection is a computer vision project designed to identify grazing animals in field environments using image recognition techniques.";
+reply="Animal Grazing Detection is a computer vision system that identifies grazing animals using image recognition.";
 }
 
 
-// EMPLOYEE ATTENDANCE
+// ATTENDANCE SYSTEM
 else if(userText.includes("attendance")){
 lastTopic="attendance";
 
-reply="Employee Attendance Tracking System is a role-based web application for managing employee attendance and generating reports.";
+reply="Employee Attendance Tracking System is a role-based web application that records and manages employee attendance.";
 }
+
+
+// FOLLOW UP QUESTIONS
+else if(userText.includes("more") || userText.includes("explain")){
+
+if(lastTopic==="voxira"){
+reply="Voxira AI integrates voice interaction with AI response generation to assist users through conversational commands.";
+}
+
+else if(lastTopic==="ats"){
+reply="The ATS analyzer compares resume keywords with job descriptions and suggests improvements for better recruiter visibility.";
+}
+
+else if(lastTopic==="animal"){
+reply="The system processes images and detects animals automatically to monitor livestock behavior.";
+}
+
+else if(lastTopic==="attendance"){
+reply="It includes an admin dashboard, attendance reports, and MySQL database integration.";
+}
+
+else{
+reply="Could you specify which project you want more details about?";
+}
+
+}
+
 addMessage(reply,"bot");
 
 },1000);
 
-}
-
-// FOLLOW UP QUESTIONS
-
-else if(userText.includes("more") || userText.includes("explain")){
-
-if(lastTopic==="voxira"){
-reply="Voxira AI integrates voice interaction with AI response generation. It demonstrates how conversational systems can assist users through voice commands.";
-}
-
-else if(lastTopic==="ats"){
-reply="The ATS Analyzer compares resume content with job descriptions, identifies missing keywords, and provides suggestions to improve recruiter compatibility.";
-}
-
-else if(lastTopic==="animal"){
-reply="The system uses image processing and object detection models to identify grazing animals and monitor livestock activity automatically.";
-}
-
-else if(lastTopic==="attendance"){
-reply="The system includes admin dashboards, attendance tracking, and database storage using MySQL for managing employee records.";
-}
-
-else{
-reply="Could you specify what you would like to know more about?";
-}
-
-}    
+};   
 
 input.addEventListener("keypress",function(e){
 if(e.key==="Enter") send.click();
