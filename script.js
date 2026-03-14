@@ -79,11 +79,14 @@ const send = document.getElementById("ai-send");
 const messages = document.getElementById("ai-messages");
 
 botButton.addEventListener("click", function(){
+
     botChat.style.display = "flex";
 
     if(!messages.dataset.welcome){
-        messages.dataset.welcome="true";
+        messages.dataset.welcome = "true";
+        welcomeMessage();   // THIS WAS MISSING
     }
+
 });
 
 botClose.addEventListener("click", function(){
@@ -188,6 +191,21 @@ removeTyping();
 let reply="I’m not sure about that. Try asking about skills, projects, experience, or contact details.";
 
 
+// GREETINGS
+if(userText.includes("hi") || userText.includes("hello") || userText.includes("hey")){
+reply="Hello! 👋 I'm DarshBot, Hemadharshini's AI portfolio assistant. You can ask about her skills, projects, or experience.";
+}
+
+// BYE
+else if(userText.includes("bye")){
+reply="Goodbye! 👋 Feel free to return anytime to learn more about Hemadharshini's work.";
+}
+
+// NICE TO MEET YOU
+else if(userText.includes("nice")){
+reply="Nice to meet you too! 😊 Let me know if you'd like to explore Hemadharshini's projects or technical skills.";
+}
+    
 // SKILLS
 if(userText.includes("skill")){
 reply="Hemadharshini has skills in Python, Flask, Streamlit, SQL, JavaScript, and AI-based application development.";
