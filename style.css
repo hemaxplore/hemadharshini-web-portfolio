@@ -568,25 +568,28 @@ body {
 /* ================= QUICK BUTTON ==================== */
 
 #quick-area{
-display:flex;
-flex-wrap:wrap;
-gap:6px;
 padding:8px;
-background:#f5f7fb;
+display:flex;
+gap:6px;
+flex-wrap:wrap;
 border-top:1px solid #eee;
+background:#ffffff;
 }
 
 .quick-btn{
-background:#eef2ff;
-border:none;
 padding:6px 10px;
+border:none;
 border-radius:8px;
-cursor:pointer;
+background:#5f9cff;
+color:white;
 font-size:12px;
+cursor:pointer;
+transition:0.2s;
 }
 
 .quick-btn:hover{
-background:#dbe4ff;
+background:#3f7fff;
+transform:scale(1.05);
 }
 
 /* ==================TYPING ANIMATION ================ */
@@ -865,6 +868,11 @@ justify-content:center;
 cursor:pointer;
 box-shadow:0 10px 25px rgba(0,0,0,0.3);
 animation:botGlow 3s infinite;
+}
+
+#ai-bot-button:hover{
+transform:scale(1.1);
+transition:0.3s;
 }
 
 @keyframes botGlow{
