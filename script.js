@@ -192,8 +192,8 @@ let reply="I’m not sure about that. Try asking about skills, projects, experie
 
 
 // GREETINGS
-if(userText.includes("hi") || userText.includes("hello") || userText.includes("hey")){
-reply="Hello! 👋 I'm DarshBot, Hemadharshini's AI portfolio assistant. You can ask about her skills, projects, or experience.";
+if(userText.includes("hi") || userText.includes("hello") || userText.includes("hey") || user.Text.includes("hai")){
+reply="Hello! 👋 What can I do for you.";
 }
 
 // BYE
