@@ -64,66 +64,69 @@ alert("Message failed. Check console.");
 
 });
 
-/* ================= AI BOT ================= */
+/* ==========================
+AI PORTFOLIO CHATBOT
+========================== */
 
-function toggleAIBot(){
+const botButton = document.getElementById("ai-bot-button");
+const botChat = document.getElementById("ai-bot-chat");
+const botClose = document.getElementById("ai-close");
 
-const bot = document.getElementById("aiBot");
-
-if(bot.style.display==="flex"){
-bot.style.display="none";
-}else{
-bot.style.display="flex";
+botButton.onclick = () => {
+botChat.style.display = "flex";
 }
 
+botClose.onclick = () => {
+botChat.style.display = "none";
 }
 
-function sendAIMessage(){
+const input = document.getElementById("ai-input");
+const send = document.getElementById("ai-send");
+const messages = document.getElementById("ai-messages");
 
-const input=document.getElementById("aiInput");
-const text=input.value.trim();
+function addMessage(text, sender){
 
-if(!text) return;
+const msg = document.createElement("div");
+msg.classList.add("ai-msg", sender);
+msg.innerHTML = text;
 
-const messages=document.getElementById("aiMessages");
+messages.appendChild(msg);
+messages.scrollTop = messages.scrollHeight;
 
-/* user message */
+}
 
-messages.innerHTML+=`<div class="ai-msg user">${text}</div>`;
+send.onclick = () => {
 
-/* simple AI reply */
+const userText = input.value.trim();
+if(userText==="") return;
 
-let reply=getAIReply(text.toLowerCase());
-
-setTimeout(()=>{
-
-messages.innerHTML+=`<div class="ai-msg bot">${reply}</div>`;
-
-messages.scrollTop=messages.scrollHeight;
-
-},500);
-
+addMessage(userText,"user");
 input.value="";
 
+let reply = "Sorry, I didn't understand.";
+
+if(userText.toLowerCase().includes("skill")){
+reply="Hemadharshini has skills in Python, Flask, Streamlit, SQL, JavaScript and AI development.";
 }
 
-function getAIReply(msg){
+else if(userText.toLowerCase().includes("project")){
+reply="Some featured projects include Voxira AI, AI ATS Resume Analyzer, Thought Web and Student Assistant Chatbot.";
+}
 
-if(msg.includes("skill"))
-return "Hemadharshini's skills include Python, Flask, Streamlit, SQL, JavaScript, AI development, and data analytics.";
+else if(userText.toLowerCase().includes("experience")){
+reply="Hemadharshini completed Web Development Internship at E-Soft IT Solutions and Generative AI Internship under MSME.";
+}
 
-if(msg.includes("project"))
-return "Her major projects include Voxira AI Speech Platform, ATS Resume Analyzer, Animal Gazing Detection System, and Student Assistant Chatbot.";
+else if(userText.toLowerCase().includes("resume")){
+reply="You can download the resume from the About section of the portfolio.";
+}
 
-if(msg.includes("education"))
-return "She is pursuing MCA at Dhanalakshmi Srinivasan Engineering College with CGPA 8.3.";
-
-if(msg.includes("contact"))
-return "You can contact her via email at darshinihema2102@gmail.com or through the contact section.";
-
-if(msg.includes("resume"))
-return "You can download her resume using the 'Download Resume' button in the About section.";
-
-return "I'm Hemadharshini's portfolio assistant. Ask me about skills, projects, education, or contact information.";
+setTimeout(()=>{
+addMessage(reply,"bot");
+},600);
 
 }
+
+input.addEventListener("keypress",function(e){
+if(e.key==="Enter") send.click();
+});
