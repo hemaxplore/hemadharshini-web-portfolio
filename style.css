@@ -914,6 +914,10 @@ padding:0 15px;
 cursor:pointer;
 }
 
+#ai-bot-chat{
+display:none;
+}
+
 /* ================= FOOTER ================= */
 footer {
     background-color: #0a1f44;
