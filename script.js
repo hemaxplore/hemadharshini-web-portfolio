@@ -64,7 +64,7 @@ alert("Message failed. Check console.");
 
 });
 
-// ================= AI PORTFOLIO CHATBOT =================
+// ================= AI PORTFOLIO ASSISTANT V2 =================
 
 document.addEventListener("DOMContentLoaded", function(){
 
@@ -78,6 +78,10 @@ const messages = document.getElementById("ai-messages");
 
 botButton.addEventListener("click", function(){
     botChat.style.display = "flex";
+
+    if(messages.children.length === 0){
+        welcomeMessage();
+    }
 });
 
 botClose.addEventListener("click", function(){
@@ -95,35 +99,131 @@ messages.scrollTop = messages.scrollHeight;
 
 }
 
+function showTyping(){
+
+const typing = document.createElement("div");
+typing.classList.add("ai-msg","bot");
+typing.id="typing";
+typing.innerHTML="Typing...";
+messages.appendChild(typing);
+
+}
+
+function removeTyping(){
+const typing = document.getElementById("typing");
+if(typing) typing.remove();
+}
+
+
+// ================= WELCOME MESSAGE =================
+
+function welcomeMessage(){
+
+addMessage(
+"👋 Hello! I'm Hemadharshini's AI Assistant.<br><br>\
+You can ask me about:<br>\
+• Skills<br>\
+• Projects<br>\
+• Experience<br>\
+• Resume<br>\
+• Contact details",
+"bot"
+);
+
+showQuickOptions();
+
+}
+
+
+// ================= QUICK BUTTONS =================
+
+function showQuickOptions(){
+
+const options = document.createElement("div");
+options.classList.add("quick-options");
+
+options.innerHTML=`
+<button onclick="quickAsk('skills')">Skills</button>
+<button onclick="quickAsk('projects')">Projects</button>
+<button onclick="quickAsk('experience')">Experience</button>
+<button onclick="quickAsk('contact')">Contact</button>
+`;
+
+messages.appendChild(options);
+
+}
+
+
+// ================= QUICK ASK =================
+
+window.quickAsk = function(text){
+input.value=text;
+send.click();
+}
+
+
+// ================= BOT LOGIC =================
+
 send.onclick = function(){
 
-const userText = input.value.trim();
+const userText = input.value.trim().toLowerCase();
 if(userText === "") return;
 
 addMessage(userText,"user");
 input.value="";
 
-let reply = "Sorry, I didn't understand.";
-
-if(userText.toLowerCase().includes("skill")){
-reply="Hemadharshini has skills in Python, Flask, Streamlit, SQL, JavaScript and AI development.";
-}
-
-else if(userText.toLowerCase().includes("project")){
-reply="Some featured projects include Voxira AI, AI ATS Resume Analyzer, Thought Web and Student Assistant Chatbot.";
-}
-
-else if(userText.toLowerCase().includes("experience")){
-reply="Hemadharshini completed Web Development Internship at E-Soft IT Solutions and Generative AI Internship under MSME.";
-}
-
-else if(userText.toLowerCase().includes("resume")){
-reply="You can download the resume from the About section of the portfolio.";
-}
+showTyping();
 
 setTimeout(function(){
+
+removeTyping();
+
+let reply="Sorry, I didn't understand. Try asking about skills, projects, experience, resume, or contact.";
+
+
+// SKILLS
+if(userText.includes("skill")){
+reply="Hemadharshini has strong skills in Python, Flask, Streamlit, SQL, JavaScript, and AI-based application development.";
+}
+
+// PROJECTS
+else if(userText.includes("project")){
+reply="She has developed multiple projects including Voxira AI Assistant, AI ATS Resume Analyzer, Thought Web AI Platform, and a Student Assistant Chatbot.";
+}
+
+// EXPERIENCE
+else if(userText.includes("experience") || userText.includes("internship")){
+reply="Hemadharshini completed a Web Development Internship at E-Soft IT Solutions and a Generative AI Internship supported by MSME.";
+}
+
+// RESUME
+else if(userText.includes("resume") || userText.includes("cv")){
+reply="You can download Hemadharshini's resume directly from the About section of this portfolio.";
+}
+
+// CONTACT
+else if(userText.includes("contact") || userText.includes("email")){
+reply="You can contact Hemadharshini via email at <b>darshinihema2102@gmail.com</b> or through the contact form available on this website.";
+}
+
+// PHONE
+else if(userText.includes("phone")){
+reply="Her contact number is <b>+91 7092389282</b>.";
+}
+
+// LOCATION
+else if(userText.includes("location")){
+reply="She is currently based in Tamil Nadu, India.";
+}
+
+// ABOUT
+else if(userText.includes("who") || userText.includes("about")){
+reply="Hemadharshini is an MCA student specializing in AI applications, data analytics, and intelligent web systems.";
+}
+
 addMessage(reply,"bot");
-},600);
+
+},1200);
 
 }
 
