@@ -567,14 +567,16 @@ body {
 
 /* ================= QUICK BUTTON ==================== */
 
-.quick-options{
+#quick-area{
 display:flex;
 flex-wrap:wrap;
 gap:6px;
 padding:8px;
+background:#f5f7fb;
+border-top:1px solid #eee;
 }
 
-.quick-options button{
+.quick-btn{
 background:#eef2ff;
 border:none;
 padding:6px 10px;
@@ -583,7 +585,7 @@ cursor:pointer;
 font-size:12px;
 }
 
-.quick-options button:hover{
+.quick-btn:hover{
 background:#dbe4ff;
 }
 
