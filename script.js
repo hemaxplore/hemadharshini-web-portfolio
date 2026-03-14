@@ -106,8 +106,17 @@ function showTyping(){
 const typing = document.createElement("div");
 typing.classList.add("ai-msg","bot");
 typing.id="typing";
-typing.innerHTML="Typing...";
+
+typing.innerHTML = `
+<div class="typing">
+<span></span>
+<span></span>
+<span></span>
+</div>
+`;
+
 messages.appendChild(typing);
+messages.scrollTop = messages.scrollHeight;
 
 }
 
@@ -282,7 +291,7 @@ reply="Could you specify which project you want more details about?";
 
 addMessage(reply,"bot");
 
-},1000);
+},1200 + Math.random()*800);
 
 };   
 
