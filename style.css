@@ -565,6 +565,28 @@ body {
     transform: translateY(-4px);
 }
 
+/* ================= QUICK BUTTON ==================== */
+
+.quick-options{
+display:flex;
+flex-wrap:wrap;
+gap:6px;
+padding:8px;
+}
+
+.quick-options button{
+background:#eef2ff;
+border:none;
+padding:6px 10px;
+border-radius:8px;
+cursor:pointer;
+font-size:12px;
+}
+
+.quick-options button:hover{
+background:#dbe4ff;
+}
+
 /* ================= CONTACT SECTION ================= */
 
 .contact-section {
