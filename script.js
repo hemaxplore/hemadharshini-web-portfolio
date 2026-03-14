@@ -68,17 +68,21 @@ alert("Message failed. Check console.");
 AI PORTFOLIO CHATBOT
 ========================== */
 
+document.addEventListener("DOMContentLoaded", function(){
+
 const botButton = document.getElementById("ai-bot-button");
 const botChat = document.getElementById("ai-bot-chat");
 const botClose = document.getElementById("ai-close");
 
-botButton.onclick = () => {
-botChat.style.display = "flex";
-}
+botButton.addEventListener("click", function(){
+    botChat.style.display = "flex";
+});
 
-botClose.onclick = () => {
-botChat.style.display = "none";
-}
+botClose.addEventListener("click", function(){
+    botChat.style.display = "none";
+});
+
+});
 
 const input = document.getElementById("ai-input");
 const send = document.getElementById("ai-send");
