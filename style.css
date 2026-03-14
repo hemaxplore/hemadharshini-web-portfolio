@@ -927,8 +927,7 @@ footer {
     font-family: Arial, sans-serif;
     font-size: 13px;
     line-height: 1.4;
-    position: fixed;
-    bottom: 0;
+    position: relative;
     width: 100%;
 }
 
