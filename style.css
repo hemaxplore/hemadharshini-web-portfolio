@@ -855,21 +855,22 @@ AI FLOATING PORTFOLIO BOT
 position:fixed;
 bottom:25px;
 right:25px;
-width:65px;
-height:65px;
+width:60px;
+height:60px;
 border-radius:50%;
-background:linear-gradient(135deg,#5f9cff,#7c4dff);
+background:linear-gradient(135deg,#4facfe,#00f2fe);
 display:flex;
 align-items:center;
 justify-content:center;
 cursor:pointer;
-box-shadow:0 8px 25px rgba(0,0,0,0.25);
-z-index:9999;
-transition:transform 0.3s ease;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+animation:botGlow 3s infinite;
 }
 
-#ai-bot-button:hover{
-transform:scale(1.1);
+@keyframes botGlow{
+0%{box-shadow:0 0 10px #4facfe;}
+50%{box-shadow:0 0 25px #00f2fe;}
+100%{box-shadow:0 0 10px #4facfe;}
 }
 
 #ai-bot-button img{
@@ -880,18 +881,15 @@ height:36px;
 /* Chat window */
 
 #ai-bot-chat{
-position:fixed;
-bottom:100px;
-right:25px;
-width:320px;
-height:420px;
-background:white;
-border-radius:14px;
-box-shadow:0 12px 40px rgba(0,0,0,0.25);
+width:340px;
+height:450px;
+background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+border-radius:18px;
+box-shadow:0 20px 40px rgba(0,0,0,0.3);
 display:none;
 flex-direction:column;
 overflow:hidden;
-z-index:9999;
+color:white;
 }
 
 /* Header */
@@ -925,19 +923,21 @@ background:#f5f7fb;
 }
 
 .ai-msg{
-padding:10px 12px;
-border-radius:10px;
-margin-bottom:10px;
 max-width:80%;
+padding:10px 14px;
+margin:6px;
+border-radius:14px;
+font-size:14px;
 }
 
 .ai-msg.bot{
-background:#e4ecff;
+background:#2f80ed;
+color:white;
 }
 
 .ai-msg.user{
-background:#5f9cff;
-color:white;
+background:#e0e0e0;
+color:black;
 margin-left:auto;
 }
 
