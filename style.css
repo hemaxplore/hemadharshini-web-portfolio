@@ -880,7 +880,7 @@ z-index:9999;
 
 #ai-bot-button:hover{
 transform:scale(1.1);
-box-shadow:0 0 40px rgba(99,102,241,0.9);
+box-shadow:0 0 40px rgba(0,200,255,0.9);
 }
 
 @keyframes floatBot{
