@@ -864,8 +864,6 @@ width:65px;
 height:65px;
 border-radius:50%;
 background:linear-gradient(135deg,#6a11cb,#2575fc);
-color:white;
-font-size:26px;
 border:none;
 cursor:pointer;
 
@@ -882,7 +880,7 @@ z-index:9999;
 
 #ai-bot-button:hover{
 transform:scale(1.1);
-box-shadow:0 0 35px rgba(99,102,241,0.9);
+box-shadow:0 0 40px rgba(99,102,241,0.9);
 }
 
 @keyframes floatBot{
