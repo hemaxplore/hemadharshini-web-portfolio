@@ -81,16 +81,20 @@ const messages = document.getElementById("ai-messages");
 botButton.addEventListener("click", function(){
 
     botChat.style.display = "flex";
+    botButton.style.display = "none";   // hide button
 
     if(!messages.dataset.welcome){
         messages.dataset.welcome = "true";
-        welcomeMessage();   // THIS WAS MISSING
+        welcomeMessage();
     }
 
 });
 
 botClose.addEventListener("click", function(){
+
     botChat.style.display = "none";
+    botButton.style.display = "flex";   // show button again
+
 });
 
 function addMessage(text, sender){
