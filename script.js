@@ -134,7 +134,7 @@ if(typing) typing.remove();
 function welcomeMessage(){
 
 addMessage(
-"👋 Hello! I'm Hemadharshini's AI Portfolio Assistant.<br><br>\
+"👋 Hello! I'm Hema's AI Portfolio Assistant 👾.<br><br>\
 You can ask me about:<br>\
 • Skills<br>\
 • Projects<br>\
