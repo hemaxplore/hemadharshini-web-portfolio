@@ -1036,18 +1036,6 @@ padding:0 15px;
 cursor:pointer;
 }
 
-body{
-background:linear-gradient(120deg,#0f2027,#203a43,#2c5364);
-background-size:300% 300%;
-animation:bgMove 10s ease infinite;
-}
-
-@keyframes bgMove{
-0%{background-position:0% 50%}
-50%{background-position:100% 50%}
-100%{background-position:0% 50%}
-}
-
 /* ================= FOOTER ================= */
 footer {
     background-color: #0a1f44;
