@@ -601,9 +601,11 @@ padding:6px 10px;
 }
 
 .typing span{
+display:inline-block;
 width:6px;
 height:6px;
-background:#666;
+margin:3px;
+background:#555;
 border-radius:50%;
 animation:typing 1.2s infinite;
 }
@@ -617,9 +619,9 @@ animation-delay:0.4s;
 }
 
 @keyframes typing{
-0%{opacity:0.2;}
-50%{opacity:1;}
-100%{opacity:0.2;}
+0%{opacity:0}
+50%{opacity:1}
+100%{opacity:0}
 }
 
 /* ================= CONTACT SECTION ================= */
@@ -861,19 +863,18 @@ right:25px;
 width:65px;
 height:65px;
 border-radius:50%;
-background:linear-gradient(135deg,#4facfe,#00f2fe);
-display:flex;
-align-items:center;
-justify-content:center;
+background:linear-gradient(135deg,#6a11cb,#2575fc);
+color:white;
+font-size:26px;
+border:none;
 cursor:pointer;
-box-shadow:0 10px 25px rgba(0,0,0,0.3);
+box-shadow:0 0 20px rgba(0,0,0,0.25);
 animation:floatBot 3s ease-in-out infinite;
 transition:0.3s;
-z-index:9999;
 }
 
 #ai-bot-button:hover{
-transform:scale(1.15);
+transform:scale(1.1);
 }
 
 @keyframes floatBot{
@@ -1025,6 +1026,18 @@ color:white;
 border:none;
 padding:0 15px;
 cursor:pointer;
+}
+
+body{
+background:linear-gradient(120deg,#0f2027,#203a43,#2c5364);
+background-size:300% 300%;
+animation:bgMove 10s ease infinite;
+}
+
+@keyframes bgMove{
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
 }
 
 /* ================= FOOTER ================= */
