@@ -171,7 +171,48 @@ send.click();
 
 }
 
+// ================= AI FUNCTION ===================
 
+async function askAI(question){
+
+const API_KEY = "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";
+
+try{
+
+const response = await fetch(
+"https://api-inference.huggingface.co/models/google/flan-t5-base",
+{
+method:"POST",
+headers:{
+"Authorization":`Bearer ${API_KEY}`,
+"Content-Type":"application/json"
+},
+body: JSON.stringify({
+inputs: "Answer as Hemadharshini's AI portfolio assistant: " + question
+})
+});
+
+const data = await response.json();
+
+if(Array.isArray(data) && data[0]?.generated_text){
+return data[0].generated_text;
+}
+
+if(data.error){
+return "AI service is currently busy. Please try again.";
+}
+
+return "I couldn't generate a response right now.";
+
+}catch(error){
+
+console.error("AI error:", error);
+return "AI connection failed.";
+
+}
+
+}
+    
 // ================= BOT LOGIC =================
 
 send.onclick = function(){
@@ -341,7 +382,13 @@ reply="Could you specify which project you want more details about?";
 
 }
 
+if(reply.includes("not sure")){
+askAI(userText).then(aiReply=>{
+addMessage(aiReply,"bot");
+});
+}else{
 addMessage(reply,"bot");
+}
 
 },1200 + Math.random()*800);
 
