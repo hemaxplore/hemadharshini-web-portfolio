@@ -120,19 +120,19 @@ transform:translateY(0);
     font-size: 16px;
 }
 
-/* ================= PROFILE PHOTO ================= */
+/* ===== PROFILE PHOTO ===== */
 
 .profile-wrapper{
 position:relative;
-width:200px;
-height:200px;
+width:190px;
+height:190px;
 margin-bottom:25px;
 display:flex;
 align-items:center;
 justify-content:center;
 }
 
-/* Animated gradient ring */
+/* rotating neon ring */
 
 .profile-wrapper::before{
 content:"";
@@ -140,27 +140,27 @@ position:absolute;
 width:200px;
 height:200px;
 border-radius:50%;
-background:conic-gradient(#00e5ff,#2563eb,#7c3aed,#00e5ff);
-animation:spinRing 6s linear infinite;
-z-index:0;
+border:3px solid transparent;
+border-top:3px solid #38bdf8;   /* sky blue */
+border-right:3px solid #38bdf8;
+animation:ringRotate 4s linear infinite;
+filter:drop-shadow(0 0 10px #38bdf8);
 }
 
-/* Profile image */
+/* profile image */
 
 .profile-wrapper img{
-width:165px;
-height:165px;
+width:170px;
+height:170px;
 border-radius:50%;
 object-fit:cover;
-display:block;
-position:relative;
-z-index:1;
 border:4px solid white;
+z-index:1;
 }
 
-/* Ring rotation */
+/* animation */
 
-@keyframes spinRing{
+@keyframes ringRotate{
 0%{transform:rotate(0deg);}
 100%{transform:rotate(360deg);}
 }
@@ -907,8 +907,8 @@ AI FLOATING PORTFOLIO BOT
 position:fixed;
 bottom:25px;
 right:25px;
-width:80px;
-height:80px;
+width:70px;
+height:70px;
 border-radius:50%;
 background:linear-gradient(135deg,#6a11cb,#2575fc);
 border:none;
