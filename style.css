@@ -88,12 +88,19 @@ body {
     text-align: center;
 }
 
-.hero-content h1 {
-    font-size: 50px;
-    font-weight: 700;
-    background: linear-gradient(to right, #0ea5e9, #2563eb);
-    -webkit-background-clip: text;
-    color: transparent;
+.hero-content h1{
+animation:fadeUp 1s ease;
+}
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
 
 .hero-content h3{
@@ -120,7 +127,7 @@ transform:translateY(0);
     font-size: 16px;
 }
 
-/* ===== PROFILE PHOTO ===== */
+/* ===== PROFILE PHOTO STYLE ===== */
 
 .profile-wrapper{
 position:relative;
@@ -132,19 +139,19 @@ align-items:center;
 justify-content:center;
 }
 
-/* rotating neon ring */
+/* glow background */
 
 .profile-wrapper::before{
 content:"";
 position:absolute;
-width:200px;
-height:200px;
+width:210px;
+height:210px;
 border-radius:50%;
-border:3px solid transparent;
-border-top:3px solid #38bdf8;   /* sky blue */
-border-right:3px solid #38bdf8;
-animation:ringRotate 4s linear infinite;
-filter:drop-shadow(0 0 10px #38bdf8);
+background:radial-gradient(circle,
+rgba(56,189,248,0.35) 0%,
+rgba(56,189,248,0.15) 40%,
+transparent 70%);
+filter:blur(8px);
 }
 
 /* profile image */
@@ -155,14 +162,15 @@ height:170px;
 border-radius:50%;
 object-fit:cover;
 border:4px solid white;
-z-index:1;
+box-shadow:0 12px 35px rgba(0,0,0,0.35);
+transition:transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* animation */
+/* hover effect */
 
-@keyframes ringRotate{
-0%{transform:rotate(0deg);}
-100%{transform:rotate(360deg);}
+.profile-wrapper:hover img{
+transform:scale(1.06);
+box-shadow:0 15px 40px rgba(56,189,248,0.45);
 }
 
 /* ================= BUTTON ================= */
