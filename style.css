@@ -868,13 +868,21 @@ color:white;
 font-size:26px;
 border:none;
 cursor:pointer;
-box-shadow:0 0 20px rgba(0,0,0,0.25);
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+box-shadow:0 0 25px rgba(99,102,241,0.6);  /* paste here */
+
 animation:floatBot 3s ease-in-out infinite;
 transition:0.3s;
+z-index:9999;
 }
 
 #ai-bot-button:hover{
 transform:scale(1.1);
+box-shadow:0 0 35px rgba(99,102,241,0.9);
 }
 
 @keyframes floatBot{
@@ -886,6 +894,8 @@ transform:scale(1.1);
 #ai-bot-button::after{
 content:'';
 position:absolute;
+top:0;
+left:0;
 width:65px;
 height:65px;
 border-radius:50%;
@@ -909,8 +919,8 @@ opacity:0;
 }
 
 #ai-bot-button img{
-width:36px;
-height:36px;
+width:30px;
+height:30px;
 }
 
 /* Chat window */
