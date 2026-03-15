@@ -140,29 +140,25 @@ position:absolute;
 width:200px;
 height:200px;
 border-radius:50%;
-background:conic-gradient(
-#00e5ff,
-#2563eb,
-#7c3aed,
-#00e5ff
-);
+background:conic-gradient(#00e5ff,#2563eb,#7c3aed,#00e5ff);
 animation:spinRing 6s linear infinite;
 z-index:0;
 }
 
 /* Profile image */
 
-.hero-photo{
-width:170px;
-height:170px;
+.profile-wrapper img{
+width:165px;
+height:165px;
 border-radius:50%;
 object-fit:cover;
+display:block;
 position:relative;
 z-index:1;
-border:3px solid white;
+border:4px solid white;
 }
 
-/* Ring rotation animation */
+/* Ring rotation */
 
 @keyframes spinRing{
 0%{transform:rotate(0deg);}
