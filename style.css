@@ -120,40 +120,51 @@ transform:translateY(0);
     font-size: 16px;
 }
 
+.profile-wrapper{
+position:relative;
+width:170px;
+height:170px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+margin-bottom:20px;
+}
+
+.profile-wrapper::before{
+content:"";
+position:absolute;
+width:170px;
+height:170px;
+border-radius:50%;
+background:conic-gradient(
+#0ea5e9,
+#2563eb,
+#7c3aed,
+#0ea5e9
+);
+animation:rotateRing 6s linear infinite;
+z-index:0;
+}
+
 .hero-photo{
 width:160px;
 height:160px;
 border-radius:50%;
 object-fit:cover;
-margin-bottom:20px;
 border:4px solid #0a1f44;
 position:relative;
 z-index:2;
+background:white;
 }
 
-.hero-photo::before{
-content:"";
-position:absolute;
-top:-6px;
-left:-6px;
-right:-6px;
-bottom:-6px;
-border-radius:50%;
-background:linear-gradient(45deg,#0ea5e9,#2563eb,#7c3aed,#0ea5e9);
-background-size:300% 300%;
-z-index:-1;
-animation:photoGlow 6s linear infinite;
+@keyframes rotateRing{
+0%{transform:rotate(0deg);}
+100%{transform:rotate(360deg);}
 }
 
-@keyframes photoGlow{
-0%{background-position:0% 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0% 50%;}
-}
-
-.hero-photo:hover{
+.profile-wrapper:hover{
 transform:scale(1.05);
-box-shadow:0 0 30px rgba(14,165,233,0.5);
 transition:0.3s;
 }
 
