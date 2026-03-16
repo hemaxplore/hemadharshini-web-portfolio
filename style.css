@@ -99,6 +99,14 @@ color:#0ea5e9;
 width:100%;
 }
 
+/* NAVBAR SCROLL EFFECT */
+
+.navbar.scrolled{
+padding:12px 90px;
+background:rgba(255,255,255,0.95);
+box-shadow:0 12px 35px rgba(0,0,0,0.15);
+}
+
 /* ================= HERO CONTENT ================= */
 .hero-content {
 flex:1;
