@@ -90,6 +90,7 @@ body {
 
 .hero-content h1{
 animation:fadeUp 1s ease;
+font-size:30px;    
 }
 
 @keyframes fadeUp{
