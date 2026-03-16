@@ -28,6 +28,7 @@ navbar.classList.remove("scrolled");
 
 });
 
+
 // ================= EMAIL VALIDATION =========================== 
     
 document.getElementById("contact-form").addEventListener("submit", function(e){
@@ -367,6 +368,39 @@ addMessage(reply,"bot");
 
 input.addEventListener("keypress",function(e){
 if(e.key==="Enter") send.click();
+});
+
+});
+
+
+// ACTIVE NAVBAR LINK ON SCROLL
+
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav-links a");
+
+window.addEventListener("scroll", () => {
+
+let current = "";
+
+sections.forEach(section => {
+
+const sectionTop = section.offsetTop - 120;
+const sectionHeight = section.offsetHeight;
+
+if(scrollY >= sectionTop){
+current = section.getAttribute("id");
+}
+
+});
+
+navLinks.forEach(link => {
+
+link.classList.remove("active");
+
+if(link.getAttribute("href") === "#" + current){
+link.classList.add("active");
+}
+
 });
 
 });
