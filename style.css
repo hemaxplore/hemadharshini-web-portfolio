@@ -127,7 +127,7 @@ transform:translateY(0);
     font-size: 16px;
 }
 
-/* ===== CLEAN PROFILE PHOTO STYLE ===== */
+/* ===== PROFILE PHOTO STYLE ===== */
 
 .profile-wrapper{
 display:flex;
@@ -145,21 +145,13 @@ border-radius:50%;
 object-fit:cover;
 border:5px solid white;
 
-/* soft professional shadow */
+/* stronger glow */
 box-shadow:
-0 10px 25px rgba(0,0,0,0.15),
-0 0 40px rgba(14,165,233,0.25);
-    
+0 0 0 6px rgba(56,189,248,0.15),
+0 10px 30px rgba(0,0,0,0.25),
+0 0 40px rgba(56,189,248,0.35);
+
 transition:transform 0.35s ease, box-shadow 0.35s ease;
-}
-
-/* subtle hover effect */
-
-.profile-wrapper img:hover{
-transform:scale(1.05);
-box-shadow:
-0 15px 35px rgba(0,0,0,0.2),
-0 0 50px rgba(56,189,248,0.25);
 }
 
 /* ================= BUTTON ================= */
