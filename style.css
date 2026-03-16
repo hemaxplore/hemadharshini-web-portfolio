@@ -96,7 +96,14 @@ transform:translateX(-50%);
 color:#0ea5e9;
 }
 
-.nav-links li a:hover::after{
+/* ACTIVE NAV LINK */
+
+.nav-links a.active{
+color:#0ea5e9;
+font-weight:600;
+}
+
+.nav-links a.active::after{
 width:100%;
 }
 
