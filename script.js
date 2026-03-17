@@ -407,21 +407,24 @@ link.classList.add("active");
 
 // HAMBURGER TOGGLE
 
-const toggle = document.querySelector(".menu-toggle");
-const nav = document.querySelector(".nav-links");
+document.addEventListener("DOMContentLoaded", () => {
 
-toggle.addEventListener("click", () => {
-    nav.classList.toggle("active");
+    const toggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector(".nav-links");
 
-    if(nav.classList.contains("active")){
-        toggle.innerHTML = "✖";   // close icon
-    } else {
-        toggle.innerHTML = "☰";   // hamburger
-    }
-});
+    if (!toggle || !nav) return; // safety check
 
-document.querySelectorAll(".nav-links a").forEach(link => {
-    link.addEventListener("click", () => {
-        navMenu.classList.remove("active");
+    toggle.addEventListener("click", () => {
+        nav.classList.toggle("active");
+
+        toggle.innerHTML = nav.classList.contains("active") ? "✖" : "☰";
     });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+        link.addEventListener("click", () => {
+            nav.classList.remove("active");
+            toggle.innerHTML = "☰";
+        });
+    });
+
 });
