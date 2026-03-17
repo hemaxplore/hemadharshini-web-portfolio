@@ -115,6 +115,17 @@ background:rgba(255,255,255,0.95);
 box-shadow:0 12px 35px rgba(0,0,0,0.15);
 }
 
+.nav-links{
+opacity:0;
+transform:translateY(-10px);
+transition:0.3s ease;
+}
+
+.nav-links.active{
+opacity:1;
+transform:translateY(0);
+}
+
 /* ================= HERO CONTENT ================= */
 .hero-content {
 flex:1;
@@ -1275,7 +1286,29 @@ display:block;
 }
 }
 
+@media (max-width:768px){
 
+.nav-links{
+position:absolute;
+top:70px;
+right:0;
+width:100%;
+background:white;
+
+flex-direction:column;
+align-items:center;
+gap:20px;
+padding:20px 0;
+
+display:none;
+}
+
+/* SHOW MENU */
+.nav-links.active{
+display:flex;
+}
+
+}
 
 
 
