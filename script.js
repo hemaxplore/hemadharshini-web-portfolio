@@ -409,21 +409,30 @@ link.classList.add("active");
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    const toggle = document.querySelector(".menu-toggle");
-    const nav = document.querySelector(".nav-links");
+    const toggle = document.getElementById("menu-toggle");
+    const nav = document.getElementById("nav-links");
 
-    if (!toggle || !nav) return; // safety check
+    if (!toggle || !nav) {
+        console.error("Navbar elements not found");
+        return;
+    }
 
     toggle.addEventListener("click", () => {
         nav.classList.toggle("active");
 
-        toggle.innerHTML = nav.classList.contains("active") ? "✖" : "☰";
+        // Change icon
+        if (nav.classList.contains("active")) {
+            toggle.textContent = "✖";
+        } else {
+            toggle.textContent = "☰";
+        }
     });
 
-    document.querySelectorAll(".nav-links a").forEach(link => {
+    // Close menu when clicking links
+    document.querySelectorAll("#nav-links a").forEach(link => {
         link.addEventListener("click", () => {
             nav.classList.remove("active");
-            toggle.innerHTML = "☰";
+            toggle.textContent = "☰";
         });
     });
 
