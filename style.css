@@ -1196,51 +1196,51 @@ padding:80px 40px;
 
 @media (max-width:768px){
 
-.navbar{
-padding:14px 20px;
+/* Fix all sections */
+#experience,
+#education,
+.projects-section,
+.skills-section,
+.contact-section {
+    padding: 60px 20px;
+}
 }
 
-/* stack hero */
+@media (max-width:768px){
 
-.hero-content{
-padding:40px 20px;
+.experience-card,
+.education-card,
+.project-card,
+.contact-card,
+.message-card {
+    width:100%;
+    padding:20px;
+    margin:0 auto;
+}
 }
 
-.hero-content h1{
-font-size:28px;
+@media (max-width:768px){
+
+.contact-card{
+    grid-template-columns: 1fr;  /* stack */
+    padding:25px;
+}
 }
 
-.hero-content h3{
-font-size:18px;
+@media (max-width:768px){
+
+.projects-grid{
+    grid-template-columns: 1fr;
+}
 }
 
-.hero-content p{
-font-size:14px;
+@media (max-width:768px){
+
+.education-card{
+    flex-direction:column;
+    text-align:center;
 }
-
-/* profile photo smaller */
-
-.profile-wrapper img{
-width:140px;
-height:140px;
 }
-
-/* sections spacing */
-
-section{
-padding:70px 20px;
-}
-
-/* nav links wrap */
-
-.nav-links{
-gap:14px;
-flex-wrap:wrap;
-justify-content:center;
-}
-
-}
-
 
 /* SMALL MOBILE */
 
@@ -1277,31 +1277,39 @@ display:block;
 
 @media (max-width:768px){
 
-    .nav-links{
-        position:absolute;
-        top:70px;
-        right:0;
-        width:100%;
-        background:white;
+.menu-toggle{
+    display:block;
+    font-size:24px;
+    cursor:pointer;
+}
 
-        flex-direction:column;
-        align-items:center;
-        gap:20px;
-        padding:20px 0;
+/* Hide default nav */
+.nav-links{
+    position:fixed;
+    top:0;
+    right:-100%;
+    width:70%;
+    height:100vh;
+    background:white;
 
-        display:none;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:30px;
 
-        /* 👇 MOVE HERE */
-        opacity:0;
-        transform:translateY(-10px);
-        transition:0.3s ease;
-    }
+    transition:0.3s ease;
+}
 
-    .nav-links.active{
-        display:flex;
-        opacity:1;
-        transform:translateY(0);
-    }
+/* Show menu */
+.nav-links.active{
+    right:0;
+}
+
+/* Optional overlay effect */
+body.menu-open{
+    overflow:hidden;
+}
+
 }
 
 
