@@ -1286,7 +1286,7 @@ display:block;
 /* Hide default nav */
 .nav-links{
     position:fixed;
-    top:0;
+    top:70px;
     right:-100%;
     width:70%;
     height:100vh;
