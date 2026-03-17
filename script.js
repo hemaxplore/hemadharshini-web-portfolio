@@ -376,7 +376,7 @@ if(e.key==="Enter") send.click();
 // ACTIVE NAVBAR LINK ON SCROLL
 
 const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".nav-links a");
+const navItems = document.querySelectorAll(".nav-links a");
 
 window.addEventListener("scroll", () => {
 
@@ -385,7 +385,6 @@ let current = "";
 sections.forEach(section => {
 
 const sectionTop = section.offsetTop - 120;
-const sectionHeight = section.offsetHeight;
 
 if(scrollY >= sectionTop){
 current = section.getAttribute("id");
@@ -393,7 +392,7 @@ current = section.getAttribute("id");
 
 });
 
-navLinks.forEach(link => {
+navItems.forEach(link => {
 
 link.classList.remove("active");
 
@@ -403,4 +402,20 @@ link.classList.add("active");
 
 });
 
+});
+
+
+// HAMBURGER TOGGLE
+
+const toggle = document.getElementById("menu-toggle");
+const navMenu = document.getElementById("nav-links");
+
+toggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+});
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        navMenu.classList.remove("active");
+    });
 });
