@@ -407,11 +407,17 @@ link.classList.add("active");
 
 // HAMBURGER TOGGLE
 
-const toggle = document.getElementById("menu-toggle");
-const navMenu = document.getElementById("nav-links");
+const toggle = document.querySelector(".menu-toggle");
+const nav = document.querySelector(".nav-links");
 
 toggle.addEventListener("click", () => {
-    navMenu.classList.toggle("active");
+    nav.classList.toggle("active");
+
+    if(nav.classList.contains("active")){
+        toggle.innerHTML = "✖";   // close icon
+    } else {
+        toggle.innerHTML = "☰";   // hamburger
+    }
 });
 
 document.querySelectorAll(".nav-links a").forEach(link => {
