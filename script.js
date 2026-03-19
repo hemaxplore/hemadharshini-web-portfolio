@@ -411,14 +411,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const toggle = document.getElementById("menu-toggle");
     const nav = document.getElementById("nav-links");
+    const overlay = document.getElementById("overlay");
 
-    if (!toggle || !nav) {
+    if (!toggle || !nav || !overlay) {
         console.error("Navbar elements not found");
         return;
     }
 
     toggle.addEventListener("click", () => {
         nav.classList.toggle("active");
+        overlay.classList.toggle("active");
 
         // Change icon
         if (nav.classList.contains("active")) {
@@ -432,8 +434,16 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll("#nav-links a").forEach(link => {
         link.addEventListener("click", () => {
             nav.classList.remove("active");
+            overlay.classList.remove("active");
             toggle.textContent = "☰";
         });
+    });
+
+    // ✅ Close menu when clicking overlay
+    overlay.addEventListener("click", () => {
+        nav.classList.remove("active");
+        overlay.classList.remove("active");
+        toggle.textContent = "☰";
     });
 
 });
