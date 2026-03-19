@@ -193,33 +193,35 @@ send.click();
     
 // ================= BOT LOGIC =================
 
+// SMART RECRUITER ANSWERS (IMPROVED)
 const smartReplies = [
 {
-keywords: ["why should we hire", "why hire", "hire you"],
-reply: "Hemadharshini is an MCA final year student specializing in AI and Data Engineering. She has built real-world AI projects like drone coordination systems, AI dashboards, and intelligent assistants. She combines strong technical skills with problem-solving ability, making her a valuable candidate."
+keywords: ["why should we hire", "why hire", "hire her", "hire you"],
+reply: "Hemadharshini is an MCA final year student specializing in AI and Data Engineering. She has built real-world AI projects like intelligent assistants, AI dashboards, and drone-based systems. She combines strong technical skills with practical implementation, making her a highly valuable candidate."
 },
 {
-keywords: ["tell me about", "about you", "introduce yourself"],
-reply: "Hemadharshini is an AI-focused MCA student with strong skills in Python, Machine Learning, Web Development, and Data Engineering. She has developed multiple AI-based applications and is passionate about building intelligent systems."
+keywords: ["introduce yourself", "about you", "tell me about"],
+reply: "Hemadharshini is an AI-focused MCA student with strong expertise in Python, Machine Learning, and Web Development. She has developed multiple real-time AI applications and is passionate about solving real-world problems using intelligent systems."
 },
 {
 keywords: ["strength", "strengths"],
-reply: "Her key strengths are analytical thinking, fast learning ability, and building practical AI solutions from concepts. She is also strong in debugging and system design."
+reply: "Her strengths include analytical thinking, fast learning ability, and the capability to convert ideas into working AI systems. She is also strong in debugging and problem-solving."
 },
 {
 keywords: ["weakness", "weaknesses"],
-reply: "She focuses deeply on problem-solving, which sometimes takes extra time, but ensures high-quality output. She is continuously improving time optimization skills."
+reply: "She focuses deeply on solving problems, which may take extra time, but ensures high-quality output. She is continuously improving efficiency and time management."
 },
 {
-keywords: ["future goal", "career goal"],
-reply: "Her goal is to become an AI Engineer and build intelligent systems that solve real-world problems using Machine Learning and automation."
+keywords: ["goal", "career goal", "future"],
+reply: "Her goal is to become an AI Engineer and build intelligent systems that solve real-world challenges using Machine Learning and automation."
 },
 {
-keywords: ["technologies", "tech stack", "tools"],
-reply: "She works with Python, Machine Learning, CNN, Reinforcement Learning, HTML, CSS, JavaScript, PHP, MySQL, and AI-based frameworks."
+keywords: ["technology", "technologies", "tech stack", "tools"],
+reply: "She works with Python, Machine Learning, CNN, Reinforcement Learning, HTML, CSS, JavaScript, PHP, MySQL, and modern AI frameworks."
 }
-];   
+];
 
+// SMART MATCH FUNCTION (STRONG MATCHING)
 function getSmartReply(userText){
 
 userText = userText.toLowerCase();
@@ -232,8 +234,11 @@ for(let item of smartReplies){
     }
 }
 
-return null; // IMPORTANT
-}    
+return null;
+}
+
+
+// ================= MAIN SEND FUNCTION =================
 
 send.onclick = function(){
 
@@ -248,22 +253,24 @@ showTyping();
 
 setTimeout(function(){
 
-// SMART RECRUITER CHECK
+removeTyping();   // ✅ ALWAYS remove loader first
+
+// ===== SMART RECRUITER CHECK =====
 let smartReply = getSmartReply(userText);
 
 if(smartReply){
     addMessage(smartReply,"bot");
-    return;  // 🔥 stops further execution
-}    
+    return;
+}
 
-removeTyping();
 
+// ===== NORMAL BOT LOGIC =====
 let reply="I’m not sure about that. Try asking about skills, projects, experience, or contact details.";
 
 
-// GREETINGS
-if(userText.includes("hi") || userText.includes("hello") || userText.includes("hey") || userText.includes("hai")){
-reply="Hello! 👋 What can I do for you.";
+// GREETING
+if(userText.includes("hi") || userText.includes("hello") || userText.includes("hey")){
+reply="Hello! 👋 What can I do for you?";
 }
 
 // BYE
@@ -310,7 +317,7 @@ reply="You can contact Hemadharshini via email at <b>darshinihema2102@gmail.com<
 
 // PHONE NUMBER
 else if(userText.includes("phone") || userText.includes("number") || userText.includes("mobile")){
-reply="You can contact Hemadharshini through these number 7092389282.";
+reply="Phone: 7092389282.";
 }
     
 // VOXIRA
