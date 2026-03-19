@@ -394,13 +394,23 @@ transition:transform 0.35s ease, box-shadow 0.35s ease;
 
 /* ================= CERTIFICATE BUTTON ============== */
 .view-btn{
-    margin-top:15px;
-    padding:10px 16px;
+    margin-top:18px;
+    padding:12px 22px;
     border:none;
-    background:#2563eb;
+    border-radius:30px;
+
+    background:linear-gradient(135deg,#2563eb,#7c3aed);
     color:#fff;
-    border-radius:8px;
+
+    font-size:14px;
+    font-weight:600;
+    letter-spacing:0.3px;
+
     cursor:pointer;
+
+    box-shadow:0 8px 20px rgba(37,99,235,0.35);
+
+    transition:all 0.3s ease;
 }
 
 .cert-modal{
@@ -429,6 +439,17 @@ transition:transform 0.35s ease, box-shadow 0.35s ease;
     font-size:28px;
     color:white;
     cursor:pointer;
+}
+
+/* HOVER EFFECT */
+.view-btn:hover{
+    transform:translateY(-3px) scale(1.03);
+    box-shadow:0 12px 28px rgba(124,58,237,0.45);
+}
+
+/* CLICK EFFECT */
+.view-btn:active{
+    transform:scale(0.96);
 }
 
 /* ================= EDUCATION ================= */
