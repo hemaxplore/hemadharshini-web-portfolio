@@ -81,29 +81,48 @@ alert("Message failed. Check console.");
 
 // CERTIFICATE MODAL LOGIC
 
-const modal = document.getElementById("certModal");
-const modalImg = document.getElementById("certImage");
-const closeBtn = document.querySelector(".close-btn");
+// ================= CERTIFICATE MODAL LOGIC =================
 
-// OPEN MODAL
-document.querySelectorAll(".view-btn").forEach(btn => {
-    btn.addEventListener("click", function(){
-        const imgSrc = this.getAttribute("data-cert");
-        modalImg.src = imgSrc;
-        modal.style.display = "flex";
-    });
-});
+document.addEventListener("DOMContentLoaded", function () {
 
-// CLOSE MODAL
-closeBtn.addEventListener("click", () => {
-    modal.style.display = "none";
-});
+    const modal = document.getElementById("certModal");
+    const modalImg = document.getElementById("certImage");
+    const closeBtn = document.querySelector(".close-btn");
 
-// CLOSE ON OUTSIDE CLICK
-modal.addEventListener("click", (e) => {
-    if(e.target === modal){
-        modal.style.display = "none";
+    // 🔒 SAFETY CHECK
+    if (!modal || !modalImg || !closeBtn) {
+        console.error("Modal elements not found!");
+        return;
     }
+
+    // OPEN MODAL
+    document.querySelectorAll(".view-btn").forEach(btn => {
+        btn.addEventListener("click", function () {
+
+            const imgSrc = this.getAttribute("data-cert");
+
+            if (!imgSrc) {
+                console.error("Image path missing!");
+                return;
+            }
+
+            modalImg.src = imgSrc;
+            modal.style.display = "flex";
+        });
+    });
+
+    // CLOSE BUTTON
+    closeBtn.addEventListener("click", function () {
+        modal.style.display = "none";
+    });
+
+    // CLICK OUTSIDE TO CLOSE
+    modal.addEventListener("click", function (e) {
+        if (e.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+
 });
 
 // ================= AI PORTFOLIO ASSISTANT =================
