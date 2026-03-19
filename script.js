@@ -193,17 +193,68 @@ send.click();
     
 // ================= BOT LOGIC =================
 
+const smartReplies = [
+{
+keywords: ["why should we hire", "why hire", "hire you"],
+reply: "Hemadharshini is an MCA final year student specializing in AI and Data Engineering. She has built real-world AI projects like drone coordination systems, AI dashboards, and intelligent assistants. She combines strong technical skills with problem-solving ability, making her a valuable candidate."
+},
+{
+keywords: ["tell me about", "about you", "introduce yourself"],
+reply: "Hemadharshini is an AI-focused MCA student with strong skills in Python, Machine Learning, Web Development, and Data Engineering. She has developed multiple AI-based applications and is passionate about building intelligent systems."
+},
+{
+keywords: ["strength", "strengths"],
+reply: "Her key strengths are analytical thinking, fast learning ability, and building practical AI solutions from concepts. She is also strong in debugging and system design."
+},
+{
+keywords: ["weakness", "weaknesses"],
+reply: "She focuses deeply on problem-solving, which sometimes takes extra time, but ensures high-quality output. She is continuously improving time optimization skills."
+},
+{
+keywords: ["future goal", "career goal"],
+reply: "Her goal is to become an AI Engineer and build intelligent systems that solve real-world problems using Machine Learning and automation."
+},
+{
+keywords: ["technologies", "tech stack", "tools"],
+reply: "She works with Python, Machine Learning, CNN, Reinforcement Learning, HTML, CSS, JavaScript, PHP, MySQL, and AI-based frameworks."
+}
+];   
+
+function getSmartReply(userText){
+
+userText = userText.toLowerCase();
+
+for(let item of smartReplies){
+    for(let keyword of item.keywords){
+        if(userText.includes(keyword)){
+            return item.reply;
+        }
+    }
+}
+
+return null; // IMPORTANT
+}    
+
 send.onclick = function(){
 
-const userText = input.value.trim().toLowerCase();
+const rawText = input.value.trim();
+const userText = rawText.toLowerCase();
 if(userText === "") return;
 
-addMessage(userText,"user");
+addMessage(rawText,"user");
 input.value="";
 
 showTyping();
 
 setTimeout(function(){
+
+// SMART RECRUITER CHECK
+let smartReply = getSmartReply(userText);
+
+if(smartReply){
+    addMessage(smartReply,"bot");
+    return;  // 🔥 stops further execution
+}    
 
 removeTyping();
 
