@@ -341,6 +341,10 @@ transition:transform 0.35s ease, box-shadow 0.35s ease;
     border-top: 5px solid #22c55e;
 }
 
+.experience-card.purple {
+    border-top: 5px solid #7c3aed;
+}
+
 /* header */
 .exp-header {
     display: flex;
