@@ -79,6 +79,33 @@ alert("Message failed. Check console.");
 
 });
 
+// CERTIFICATE MODAL LOGIC
+
+const modal = document.getElementById("certModal");
+const modalImg = document.getElementById("certImage");
+const closeBtn = document.querySelector(".close-btn");
+
+// OPEN MODAL
+document.querySelectorAll(".view-btn").forEach(btn => {
+    btn.addEventListener("click", function(){
+        const imgSrc = this.getAttribute("data-cert");
+        modalImg.src = imgSrc;
+        modal.style.display = "flex";
+    });
+});
+
+// CLOSE MODAL
+closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+});
+
+// CLOSE ON OUTSIDE CLICK
+modal.addEventListener("click", (e) => {
+    if(e.target === modal){
+        modal.style.display = "none";
+    }
+});
+
 // ================= AI PORTFOLIO ASSISTANT =================
 
 document.addEventListener("DOMContentLoaded", function(){
