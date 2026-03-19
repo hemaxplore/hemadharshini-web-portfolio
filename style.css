@@ -392,6 +392,44 @@ transition:transform 0.35s ease, box-shadow 0.35s ease;
     color: #334155;
 }
 
+/* ================= CERTIFICATE BUTTON ============== */
+.view-btn{
+    margin-top:15px;
+    padding:10px 16px;
+    border:none;
+    background:#2563eb;
+    color:#fff;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.cert-modal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.7);
+    justify-content:center;
+    align-items:center;
+    z-index:2000;
+}
+
+.cert-modal img{
+    max-width:90%;
+    max-height:90%;
+    border-radius:10px;
+}
+
+.close-btn{
+    position:absolute;
+    top:20px;
+    right:30px;
+    font-size:28px;
+    color:white;
+    cursor:pointer;
+}
 
 /* ================= EDUCATION ================= */
 #education {
