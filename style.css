@@ -299,6 +299,14 @@ transition:transform 0.35s ease, box-shadow 0.35s ease;
     padding: 70px 20px;
 }
 
+.section-title {
+    text-align: center;
+    font-size: 34px;
+    margin-bottom: 40px;   /* better spacing */
+    color: #0f172a;
+    font-weight: 700;
+}
+
 /* container for spacing */
 .experience-container {
     display: flex;
