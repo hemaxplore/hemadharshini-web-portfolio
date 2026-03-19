@@ -295,31 +295,32 @@ transition:transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 /* ================= EXPERIENCE ================= */
-/* EXPERIENCE */
 #experience {
-    padding: 80px 100px;
+    padding: 70px 20px;
 }
 
-.section-title {
-    text-align: center;
-    font-size: 36px;
-    margin-bottom: 50px;
-    color: #0f172a;
+/* container for spacing */
+.experience-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;   /* 🔥 THIS FIXES MERGING */
 }
 
+/* card */
 .experience-card {
     background: #ffffff;
     border-radius: 18px;
-    padding: 30px 35px;
-    margin-bottom: 35px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-    transition: transform 0.3s;
+    padding: 25px 22px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: 0.3s ease;
 }
 
+/* hover */
 .experience-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-5px);
 }
 
+/* top color borders */
 .experience-card.blue {
     border-top: 5px solid #2563eb;
 }
@@ -332,49 +333,28 @@ transition:transform 0.35s ease, box-shadow 0.35s ease;
     border-top: 5px solid #22c55e;
 }
 
+/* header */
 .exp-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    gap: 10px;
 }
 
+/* title */
 .exp-header h3 {
-    font-size: 22px;
+    font-size: 18px;
     color: #0f172a;
+    line-height: 1.4;
 }
 
+/* status badge */
 .status {
-    padding: 6px 16px;
+    padding: 5px 12px;
     border-radius: 20px;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
-}
-
-.status.completed {
-    background: #dcfce7;
-    color: #16a34a;
-}
-
-.duration {
-    margin: 10px 0 14px;
-    color: #64748b;
-}
-
-.experience-card ul {
-    padding-left: 18px;
-}
-
-.experience-card ul li {
-    margin-bottom: 8px;
-    color: #334155;
-}
-
-/* Status badge */
-.status {
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 13px;
-    font-weight: 500;
+    white-space: nowrap;
 }
 
 .status.completed {
@@ -382,15 +362,24 @@ transition:transform 0.35s ease, box-shadow 0.35s ease;
     color: #166534;
 }
 
-/* Bullet list */
+/* duration */
+.duration {
+    margin: 8px 0 12px;
+    font-size: 14px;
+    color: #64748b;
+}
+
+/* list */
 .experience-card ul {
-    margin-top: 10px;
     padding-left: 18px;
 }
 
 .experience-card ul li {
     margin-bottom: 6px;
+    font-size: 14px;
+    color: #334155;
 }
+
 
 /* ================= EDUCATION ================= */
 #education {
@@ -1210,7 +1199,7 @@ padding:80px 40px;
 
 .experience-card,
 .education-card,
-.project-card,
+.project-card,.
 .contact-card,
 .message-card {
     width:100%;
@@ -1230,7 +1219,7 @@ padding:80px 40px;
 @media (max-width:768px){
 
 .projects-grid{
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr;0
 }
 }
 
@@ -1240,6 +1229,23 @@ padding:80px 40px;
     flex-direction:column;
     text-align:center;
 }
+}
+
+@media (max-width:768px){
+
+    .exp-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .status {
+        margin-top: 6px;
+    }
+
+    .experience-card {
+        padding: 20px 18px;
+    }
+
 }
 
 /* SMALL MOBILE */
