@@ -264,7 +264,15 @@ reply: "Her goal is to become an AI Engineer and build intelligent systems that 
 {
 keywords: ["technology", "technologies", "tech stack", "tools"],
 reply: "She works with Python, Machine Learning, CNN, Reinforcement Learning, HTML, CSS, JavaScript, PHP, MySQL, and modern AI frameworks."
-}
+},
+{
+keywords: ["drone", "marl", "drone project", "drone swarm"],
+reply: "Hemadharshini developed an Autonomous Drone Swarm Coordination System using Multi-Agent Reinforcement Learning (MARL). The system enables multiple drones to coordinate, avoid obstacles, and perform intelligent navigation using decentralized AI."
+},
+{
+keywords: ["education", "study", "qualification", "academic"],
+reply: "Hemadharshini completed her Higher Secondary at Raj Vidhya Bhavan, Thuraiyur (75%). She holds a BCA degree from Cauvery College for Women, Trichy (9.0 CGPA), and is currently pursuing MCA at Dhanalakshmi Srinivasan Engineering College, Perambalur (8.5 CGPA)."
+}    
 ];
 
 // SMART MATCH FUNCTION (STRONG MATCHING)
@@ -340,6 +348,7 @@ else if(userText.includes("project")){
 lastTopic="projects";
 
 reply="Hemadharshini has developed several projects:<br><br>\
+• Autonomous Drone Swarm Coordination (MARL)<br>\
 • Voxira AI Assistant<br>\
 • AI ATS Resume Analyzer<br>\
 • Thought Web AI Platform<br>\
@@ -364,6 +373,11 @@ reply="You can contact Hemadharshini via email at <b>darshinihema2102@gmail.com<
 // PHONE NUMBER
 else if(userText.includes("phone") || userText.includes("number") || userText.includes("mobile")){
 reply="Phone: 7092389282.";
+}
+
+// EDUCATION
+else if(userText.includes("education") || userText.includes("study") || userText.includes("qualification")){
+reply="Hemadharshini completed Higher Secondary at Raj Vidhya Bhavan, Thuraiyur (75%). She earned her BCA from Cauvery College for Women, Trichy with 9.0 CGPA, and is currently pursuing MCA at Dhanalakshmi Srinivasan Engineering College, Perambalur with 8.5 CGPA.";
 }
     
 // VOXIRA
@@ -405,6 +419,13 @@ lastTopic="attendance";
 reply="Employee Attendance Tracking System is a role-based web application used to record and manage employee attendance. It allows administrators to track employee presence and generate reports. Type 'explain more' to see the technologies used.";
 }
 
+// DRONE PROJECT
+else if(userText.includes("drone") || userText.includes("marl")){
+lastTopic="drone";
+
+reply="Autonomous Drone Swarm Coordination is an AI-based system where multiple drones operate using Multi-Agent Reinforcement Learning. It enables decentralized decision-making, obstacle avoidance, and intelligent coordination in dynamic environments. Type 'explain more' to see the technologies used.";
+}    
+
 
 // FOLLOW UP QUESTIONS
 else if(
@@ -412,6 +433,7 @@ else if(
 !userText.includes("voxira") &&
 !userText.includes("ats") &&
 !userText.includes("animal") &&
+!userText.includes("drone") &&    
 !userText.includes("attendance")
 ){
     
@@ -457,6 +479,17 @@ reply="Tools used in Employee Attendance System:<br><br>\
 • HTML CSS JavaScript<br>\
 • Admin dashboard system";
 }
+
+else if(lastTopic==="drone"){
+reply="Tools used in Drone Swarm Project:<br><br>\
+• Python<br>\
+• Reinforcement Learning (DQN)<br>\
+• Multi-Agent Systems (MARL)<br>\
+• OpenCV (Simulation)<br>\
+• Flask Web Interface<br>\
+• PyTorch<br>\
+• Real-time Drone Simulation Environment";
+}    
 
 else{
 reply="Could you specify which project you want more details about?";
