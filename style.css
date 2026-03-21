@@ -330,6 +330,11 @@ transition:transform 0.35s ease, box-shadow 0.35s ease;
     transition: 0.3s ease;
 }
 
+.project-card,
+.experience-card {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
 /* top color borders + matching shadows */
 
 .experience-card.blue {
