@@ -635,12 +635,15 @@ transition:transform 0.35s ease, box-shadow 0.35s ease;
     background: #ffffff;
     padding: 28px 30px;
     border-radius: 18px;
-    box-shadow: 0 18px 40px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
+    
+    /* CLEAN BASE SHADOW */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
 }
 
 .project-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.10);
 }
 
 .project-card h3 {
@@ -655,33 +658,13 @@ transition:transform 0.35s ease, box-shadow 0.35s ease;
     line-height: 1.6;
 }
 
-/* COLOR BORDERS + MATCHING SHADOWS */
+/* COLOR BORDERS */
 
-.border-blue {
-    border-top: 5px solid #6366f1;
-    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.25);
-}
-
-.border-green {
-    border-top: 5px solid #22c55e;
-    box-shadow: 0 10px 25px rgba(34, 197, 94, 0.25);
-}
-
-.border-orange {
-    border-top: 5px solid #f97316;
-    box-shadow: 0 10px 25px rgba(249, 115, 22, 0.25);
-}
-
-.border-purple {
-    border-top: 5px solid #a855f7;
-    box-shadow: 0 10px 25px rgba(168, 85, 247, 0.25);
-}
-
-/* ✅ YOUR PINK CARD (SPECIAL) */
-.border-pink {
-    border-top: 5px solid #ec4899;
-    box-shadow: 0 10px 25px rgba(236, 72, 153, 0.35);
-}
+.border-blue { border-top: 4px solid #6366f1; }
+.border-green { border-top: 4px solid #22c55e; }
+.border-orange { border-top: 4px solid #f97316; }
+.border-purple { border-top: 4px solid #a855f7; }
+.border-pink { border-top: 4px solid #ec4899; }
 
 /* Tech tags */
 .tech-tags {
