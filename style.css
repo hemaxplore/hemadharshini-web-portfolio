@@ -345,6 +345,11 @@ transition:transform 0.35s ease, box-shadow 0.35s ease;
     border-top: 5px solid #7c3aed;
 }
 
+.project-card.border-pink {
+    border-top: 5px solid #ec4899;
+    box-shadow: 0 4px 15px rgba(236, 72, 153, 0.2);
+}
+
 /* header */
 .exp-header {
     display: flex;
