@@ -426,7 +426,7 @@ else if(
 !userText.includes("animal") &&
 !userText.includes("drone") &&
 !userText.includes("attendance") &&
-!userText.includes("college placement")
+!userText.includes("placement")
 ){
     
 if(lastTopic==="voxira"){
@@ -497,7 +497,7 @@ else{
 reply="Please specify which project you want more details about (Voxira, ATS, Drone, Placement, etc.).";
 }
 
-}`
+}
 
 addMessage(reply,"bot");
 
