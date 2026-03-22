@@ -79,8 +79,6 @@ alert("Message failed. Check console.");
 
 });
 
-// CERTIFICATE MODAL LOGIC
-
 // ================= CERTIFICATE MODAL LOGIC =================
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -264,15 +262,7 @@ reply: "Her goal is to become an AI Engineer and build intelligent systems that 
 {
 keywords: ["technology", "technologies", "tech stack", "tools"],
 reply: "She works with Python, Machine Learning, CNN, Reinforcement Learning, HTML, CSS, JavaScript, PHP, MySQL, and modern AI frameworks."
-},
-{
-keywords: ["drone", "marl", "drone project", "drone swarm"],
-reply: "Hemadharshini developed an Autonomous Drone Swarm Coordination System using Multi-Agent Reinforcement Learning (MARL). The system enables multiple drones to coordinate, avoid obstacles, and perform intelligent navigation using decentralized AI."
-},
-{
-keywords: ["education", "study", "qualification", "academic"],
-reply: "Hemadharshini completed her Higher Secondary at Raj Vidhya Bhavan, Thuraiyur (75%). She holds a BCA degree from Cauvery College for Women, Trichy (9.0 CGPA), and is currently pursuing MCA at Dhanalakshmi Srinivasan Engineering College, Perambalur (8.5 CGPA)."
-}    
+}
 ];
 
 // SMART MATCH FUNCTION (STRONG MATCHING)
@@ -323,7 +313,7 @@ let reply="I’m not sure about that. Try asking about skills, projects, experie
 
 
 // GREETING
-if(userText.includes("hi") || userText.includes("hello") || userText.includes("hey")){
+if(userText.includes("hi") || userText.includes("hello") || userText.includes("hai")){
 reply="Hello! 👋 What can I do for you?";
 }
 
@@ -349,6 +339,7 @@ lastTopic="projects";
 
 reply="Hemadharshini has developed several projects:<br><br>\
 • Autonomous Drone Swarm Coordination (MARL)<br>\
+• College Placement Prediction Dashboard<br>\
 • Voxira AI Assistant<br>\
 • AI ATS Resume Analyzer<br>\
 • Thought Web AI Platform<br>\
@@ -433,8 +424,9 @@ else if(
 !userText.includes("voxira") &&
 !userText.includes("ats") &&
 !userText.includes("animal") &&
-!userText.includes("drone") &&    
-!userText.includes("attendance")
+!userText.includes("drone") &&
+!userText.includes("attendance") &&
+!userText.includes("college placement")
 ){
     
 if(lastTopic==="voxira"){
@@ -489,13 +481,23 @@ reply="Tools used in Drone Swarm Project:<br><br>\
 • Flask Web Interface<br>\
 • PyTorch<br>\
 • Real-time Drone Simulation Environment";
+}
+
+else if(lastTopic==="placement"){
+reply="Tools used in Placement Prediction System:<br><br>\
+• JavaScript (Frontend Logic)<br>\
+• Rule-Based Scoring Model<br>\
+• Feature Parameters: CGPA, Skills, Internships, Projects<br>\
+• Machine Learning (Planned): Random Forest, XGBoost, Logistic Regression<br>\
+• Explainable AI: SHAP (for feature importance)<br>\
+• Deployment: GitHub Pages / Netlify";
 }    
 
 else{
-reply="Could you specify which project you want more details about?";
+reply="Please specify which project you want more details about (Voxira, ATS, Drone, Placement, etc.).";
 }
 
-}
+}`
 
 addMessage(reply,"bot");
 
