@@ -417,6 +417,12 @@ lastTopic="drone";
 reply="Autonomous Drone Swarm Coordination is an AI-based system where multiple drones operate using Multi-Agent Reinforcement Learning. It enables decentralized decision-making, obstacle avoidance, and intelligent coordination in dynamic environments. Type 'explain more' to see the technologies used.";
 }    
 
+// PLACEMENT PROJECT
+else if(userText.includes("placement") || userText.includes("college placement")){
+lastTopic="placement";
+
+reply="College Placement Prediction Dashboard is an AI-inspired system that predicts a student's placement chances based on key factors like CGPA, skills, internships, and projects. It currently uses a rule-based scoring model and is designed to be upgraded with Machine Learning models like Random Forest and XGBoost. Type 'explain more' to see the technologies used.";
+}    
 
 // FOLLOW UP QUESTIONS
 else if(
